@@ -1,0 +1,31 @@
+# Header
+menu:
+  主页: /
+  所有文章: /archives
+  随笔: /tags/随笔
+  相册: /instagram
+
+# SubNav
+subnav:
+  github: "https://github.com/litten"
+  weibo: "http://weibo.com/litten225"
+  rss: /atom.xml
+  # facebook: "/"
+  # google: "/"
+  # twitter: "/"
+  # linkedin: "/"
+
+rss: /atom.xml
+
+# Content
+excerpt_link: more
+fancybox: true
+
+# Miscellaneous
+
+favicon: /favicon.png
+
+avatar: "https://avatars2.githubusercontent.com/u/2024949?v=2&s=150"
+share: true
+duoshuo: "litten-hexo"
+tagcloud: true
