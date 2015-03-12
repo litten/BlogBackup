@@ -4,31 +4,80 @@
 .mid-col {
     left: 0;
 }
+#header{
+    .header-nav{
+        position: relative;
+    }
+}
+.header-author{
+    &.fixed{
+        position: fixed;
+        top: -13px;
+        width: 100%;
+        color: #ddd;
+    }
+}
+.overlay{
+    .slider-trigger{
+        position: absolute;
+        z-index: 101;
+        bottom: 0;
+        left: 0;
+        width: 42px;
+        height: 42px;
+        &:hover{
+            background: #444;
+        }
+        &:before{
+            color: #ddd;
+            content: "\f00b";
+            font: 16px FontAwesome;
+            width: 16px;
+            height: 16px;
+            margin-left: 9px;
+            margin-top: 14px;
+            display: block;
+        }
+    }
+}
+.article-header{
+    border-left: none;
+    padding: 0;
+    border-bottom: 1px dotted #ddd;
+    h1{
+        margin-bottom: 10px;
+    }
+}
 .header-subtitle{
     padding: 0 24px;
+}
+.article-info{
+    margin: 10px 0 35px 0;
+    padding-bottom: 1px;
+}
+.article-more-link{
+    a{
+        float:right;
+    }
 }
 .article{
     padding: 10px;
     margin: 10px;
     .article-entry{
+        padding-left: 0;
         padding-right: 0;
         padding-top: 10px;
     }
     .article-title{
         font-size: 18px;
-        height: 28px;
-        overflow: hidden;
+        max-width: 185px;
         display: block;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        margin: 0;
     }
     .article-meta{
-        width: 100%;
-        border-bottom: 1px dotted #ddd;
-        left: 0;
-        top: 45px;
-        text-align: left;
+        width: auto;
         height: 30px;
+        margin-top: -5px;
         position: ralative;
         .article-date{
             font-size: 12px;
@@ -43,6 +92,8 @@
             margin-left: 10px;
             time{
                 width: auto;
+                float: right;
+                margin-right: 10px;
             }
         }
         .article-tag-list{
@@ -97,6 +148,9 @@
 .duoshuo {
     padding: 0 13px;
 }
+#disqus_thread {
+    padding: 0 13px;
+}
 
 #mobile-nav{
     display: block;
@@ -108,10 +162,12 @@
 
 .instagram .open-ins{
     left: 2px;
-    top: -45px;
+    top: -30px;
     color: #aaa;
 }
-
+.info-on-right{
+    float: initial;
+}
 .archives-wrap{
     margin: 10px 10px 0px;
     padding: 10px;
@@ -126,9 +182,10 @@
         }
     }
     .article-meta{
-        display: none;
         .archive-article-date{
             font-size: 12px;
+            margin-right: 10px;
+            margin-top: -5px;
         }
         .article-tag-list-link{
             font-size: 12px;

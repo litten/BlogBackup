@@ -8,13 +8,21 @@
 			position: absolute;
 			width: 100%;
 			background: #4d4d4d;
+			&.fixed{
+		        position: fixed;
+		        height: 42px;
+		        z-index: 99;
+		    }
 		}
 		#header{
 			padding: 10px 0 0 0;
 			.profilepic{
+				display: block;
 				position: relative;
+				z-index: 100;
 			}
 			.header-menu{
+				height: auto;
 				margin: 10px;
 				ul{
 					text-align: center;
@@ -64,7 +72,13 @@
 		@import "_partial/mobile"
 	}
 }
-
+.header-author{
+	text-align: center;
+	margin: 0.67em 0;
+	font-family: Roboto, "Roboto", serif;
+	font-size: 30px;
+	transition: 0.3s;
+}
 #header{
 	width:100%;
 	padding:20% 0% 0% 15%;
@@ -77,19 +91,14 @@
 	}
 	.profilepic{
 		text-align: center;
+		display: block;
 		img{
-			border-radius:50%;
+			border-radius:300px;
 			width: 128px;
 			height: 128px;
 			border: 2px solid white;
 			background: #88acdb;
 		}
-	}
-	.header-author{
-		text-align: center;
-		margin: 0.67em 0;
-		font-family: Roboto, "Roboto", serif;
-		font-size: 30px;
 	}
 	.header-subtitle{
 		text-align: center;
@@ -103,13 +112,17 @@
 	}
 	.header-menu{
 		font-weight: 300;
-		margin-left: 74px;
-		margin-top: 40px;
-		margin-bottom: 40px;
-		line-height: 35px;
+		line-height: 31px;
 		cursor: pointer;
 		text-transform: uppercase;
 		float:none;
+		height: 150px;
+		margin-left: -12px;
+		text-align: center;
+		display: -webkit-box;
+		-webkit-box-orient: horizontal;
+		-webkit-box-pack: center;
+		-webkit-box-align: center;
 		li{
 			cursor: default;
 			a{
@@ -122,6 +135,10 @@
 		width: 100%;
 		overflow: hidden;
 		min-height: 500px;
+		.switch-wrap{
+			transition: transform .3s ease-in;
+			position: relative;
+		}
 	}
 	.turn-left{
 	    transform: translate(-100%, 0 );
@@ -144,7 +161,7 @@
 				*display:inline;
 				text-indent:-9999px;
 				margin:0 8px 15px 8px;
-				opacity:0.5;
+				opacity:0.7;
 				width:28px;
 				height:28px;
 				transition:0.3s;
@@ -204,88 +221,67 @@
 					border:1px solid #006b98;
 				}
 			}
-		}
-	}
-	.tagcloud{
-		a{
-			display:inline-block;  
-		    text-decoration:none;  
-		    font-size:10px;  
-		    color:#333;   
-		    height:18px;  
-		    line-height:18px;  
-		    padding:0 2px 0 12px;  
-		    position:relative;  
-		    border-radius:0 5px 5px 0; 
-		    margin: 5px 9px 5px 8px;
-		    font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
-			&:hover{
-				opacity: 0.8;
+			a.zhihu {
+				background:url('/img/zhihu.png') center no-repeat #0078d8;
+				border:1px solid #0078d8;
+				&:hover {
+					border:1px solid #0078d8;
+				}
 			}
-		    &:before{
-			    content: " ";
-				width: 0px;
-				height: 0px;
-				position: absolute;
-				top: 0;
-				left: -18px;
-				border: 9px solid transparent;
-		    }
-		    &:after{  
-			    content:" ";  
-			    width:4px;  
-			    height:4px;  
-			    background-color:#fff;  
-			    border-radius:4px;  
-			    box-shadow:0px 0px 0px 1px rgba(0,0,0,.3);  
-			    position:absolute;  
-			    top: 7px;
-				left: 2px;
-			}  
-		}
-		a.color1{
-			background: #8aabca;
-			&:before{
-				border-right-color:#8aabca;  
+			a.douban {
+				background:url('/img/douban.png') center no-repeat #06c611;
+				border:1px solid #06c611;
+				&:hover {
+					border:1px solid #06c611;
+				}
 			}
-		}
-		a.color2{
-			background: #99d1d2;
-			&:before{
-				border-right-color:#99d1d2;  
-			}
-		}
-		a.color3{
-			background: #fcd9c6;
-			&:before{
-				border-right-color:#fcd9c6;  
-			}
-		}
-		a.color4{
-			background: #fde0a6;
-			&:before{
-				border-right-color:#fde0a6;  
-			}
-		}
-		a.color5{
-			background: #c9e5e8;
-			&:before{
-				border-right-color:#c9e5e8;  
+			a.mail {
+				background:url('/img/mail.png') center no-repeat #005a87;
+				border:1px solid #005a87;
+				&:hover {
+					border:1px solid #006b98;
+				}
 			}
 		}
 	}
-	.first-part{
-		transition: transform .3s ease-in;
-	}
-	.second-part{
-		transition: transform .3s ease-in;
-		left: 100%;
+	.switch-part{
 		width: 100%;
-		top: 20px;
 		position: absolute;
+	}
+	.switch-part1{
+		left: 0;
+	}
+	.switch-part2{
+		left: 100%;
+		top: 20px;
+		overlay-x: hidden;
+		overflow-y: auto;
+		max-height: 200px;
+	}
+	.switch-part3{
+		left: 200%;
+		line-height: 30px;
+		.switch-friends-link{
+			margin-right: 9px;
+			border-radius: 3px;
+			padding: 5px;
+			&:hover{
+				background: #88acdb;
+				color: #fff;
+			}
+		}
+	}
+	.switch-part4{
+		left: 300%;
+		text-align: left;
+		line-height: 30px;
 	}
 }
 
 .duoshuo{
+	padding: 0 40px;
+}
+
+#disqus_thread{
 	padding: 0 40px;
 }

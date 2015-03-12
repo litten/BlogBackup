@@ -29,3 +29,9 @@ avatar: "https://avatars2.githubusercontent.com/u/2024949?v=2&s=150"
 share: true
 duoshuo: "litten-hexo"
 tagcloud: true
+
+#是否开启“关于我”。
+#不开启——
+#aboutme: false
+#开启——
+aboutme: 华中科技大学09级，就职于腾讯SNG。擅长各项前端技能，深入研究移动端开发与前端性能。视觉设计爱好者。
