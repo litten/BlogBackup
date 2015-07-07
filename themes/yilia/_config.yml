@@ -25,7 +25,7 @@ fancybox: true
 
 favicon: /favicon.png
 
-avatar: "https://avatars2.githubusercontent.com/u/2024949?v=2&s=150"
+avatar: /assets/blogImg/litten.png
 share: true
 duoshuo: "litten-hexo"
 tagcloud: true

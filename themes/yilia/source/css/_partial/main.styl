@@ -53,8 +53,8 @@
 
 		.intrude-less {
 			width: 76%;
-			top: 67px;
-			position: absolute;
+			text-align: center;
+			margin: 112px auto 0;
 		}
 	}
 	.mid-col {
@@ -81,28 +81,46 @@
 }
 #header{
 	width:100%;
-	padding:20% 0% 0% 15%;
 	a {
-		font-family: Roboto, "Roboto", serif;
-		color: #444;
+		color: #696969;
 		&:hover {
-			color: #666;
+			color: #B0A0AA;
 		}
 	}
 	.profilepic{
 		text-align: center;
 		display: block;
+		border: 5px solid #fff;
+		border-radius: 300px;
+		width: 128px;
+		height: 128px;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+		background: #88acdb;
+		-webkit-transition: all 0.2s ease-in;
+		display: -webkit-box;
+		-webkit-box-orient: horizontal;
+		-webkit-box-pack: center;
+		-webkit-box-align: center;
+		text-align: center;
 		img{
-			border-radius:300px;
-			width: 128px;
-			height: 128px;
-			border: 2px solid white;
-			background: #88acdb;
+			width: 20%;
+			height: 20%;
+			border-radius: 300px;
+			opacity: 0;
+			-webkit-transition: all 0.2s ease-in;
+			&.show{
+				width: 100%;
+				height: 100%;
+				opacity: 1;
+			}
 		}
 	}
 	.header-subtitle{
 		text-align: center;
 		color:#999;
+		font-size: 14px;
 		line-height: 25px;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -126,6 +144,7 @@
 		li{
 			cursor: default;
 			a{
+				font-size: 14px;
 				min-width: 300px;
 			}
 		}
@@ -135,6 +154,7 @@
 		width: 100%;
 		overflow: hidden;
 		min-height: 500px;
+		font-size: 14px;
 		.switch-wrap{
 			transition: transform .3s ease-in;
 			position: relative;

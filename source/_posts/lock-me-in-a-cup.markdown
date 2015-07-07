@@ -6,7 +6,7 @@ comments: true
 tags: 
 	- 随笔 
 	- 药别停
----       
+---
 最近流行把动漫人物锁在手机屏幕里，我把自己锁在了杯具里。  
 <!-- more -->     
 ![我很无聊我承认了](/assets/blogImg/lock.jpg)   

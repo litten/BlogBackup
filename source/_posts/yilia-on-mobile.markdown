@@ -6,7 +6,7 @@ comments: true
 tags: 
 	- hexo
 	- 主题 
----     
+---
 
 [Yilia](https://github.com/litten/hexo-theme-yilia)是我去年9月开发的主题，本来只是想给自己玩，因而开始有许多“任性”的设计。诸如“我本可以兼容ie，但我就不”这种…
 结果star数越来越多，半年里，居然成为了搜索“hexo-theme”最多star数的主题。

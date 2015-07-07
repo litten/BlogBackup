@@ -7,7 +7,7 @@ tags:
 	- 产品 
 	- 随笔
 brief: "读《通用设计法则》"
----       
+---
 为何人会沉迷？这个模型很有意思。
 
 ![沉浸的模型](/assets/blogImg/immersion.png)

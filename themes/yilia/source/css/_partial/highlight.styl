@@ -13,11 +13,11 @@ highlight-blue = #6699cc
 highlight-purple = #f92672
 
 $code-block
-  background: highlight-background
-  margin: 0 0
-  padding: 15px article-padding
+  background: #4D4D4D
+  margin: 10px 0
+  padding: 10px 10px
   overflow: auto
-  color: highlight-foreground
+  color: #4C4C4C
   line-height: font-size * line-height
 
 $line-numbers
@@ -31,12 +31,15 @@ $line-numbers
     background: color-background
     text-shadow: 0 1px #fff
     padding: 0 0.3em
+    border: none
   pre
     @extend $code-block
+    color: #EEF8FC
     code
       background: none
       text-shadow: none
       padding: 0
+      color: #EEF8FC
   .highlight
     @extend $code-block
     pre
@@ -61,6 +64,8 @@ $line-numbers
       @extend $line-numbers
       text-align: right
       padding-right: 20px
+      .line
+        text-shadow: none
     .line
       font-size: font-size
       height: font-size * line-height
@@ -105,7 +110,7 @@ $line-numbers
 
 pre
   .comment
-    color: #666
+    color: #ddd
   .title
     color: highlight-comment
   .variable

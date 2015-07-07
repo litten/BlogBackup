@@ -51,18 +51,29 @@
 .header-subtitle{
     padding: 0 24px;
 }
-.article-info{
-    margin: 10px 0 35px 0;
-    padding-bottom: 1px;
+
+.article-info-index.article-info{
+  padding-top: 10px;
+  margin: 0;
+  border-top: 1px solid #ddd;
+}
+.article-info-post.article-info{
+    margin: 0;
+    padding-top: 10px;
+    border: none;
 }
 .article-more-link{
     a{
         float:right;
     }
 }
+#viewer-box .viewer-box-l{
+    font-size: 14px;
+}
 .article{
     padding: 10px;
     margin: 10px;
+    font-size: 14px;
     .article-entry{
         padding-left: 0;
         padding-right: 0;
@@ -194,10 +205,17 @@
 }
 .archives{
     .archive-article{
+        padding: 10px 0;
         margin-left: 0;
     }
 }
 
 #footer {
-  margin: 10px;
+    .footer-left{
+        float: initial;
+        margin-bottom: 10px;
+    }
+    .footer-right{
+        float: initial;
+    }
 }

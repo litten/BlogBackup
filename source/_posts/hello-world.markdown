@@ -6,7 +6,6 @@ comments: true
 tags: 
 	- 杂谈 
 	- octopress
-key: "1"
 ---
 在Winiex的推荐和帮助下，这个octopress博客终于搭建起来了。
 

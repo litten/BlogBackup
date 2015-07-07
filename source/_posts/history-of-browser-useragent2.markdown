@@ -7,8 +7,7 @@ tags:
      - web
      - 浏览器
 brief: "关于UserAgent的一篇野史"
-
----    
+---
 
 ![其实应该叫做浏览器约架史](/assets/blogImg/browser-history2.jpg)    
 

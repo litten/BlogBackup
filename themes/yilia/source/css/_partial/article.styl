@@ -1,13 +1,76 @@
+.body-wrap{
+  margin-bottom: 80px;
+}
 .article {
-  margin: 30px 40px 30px 40px;
+  margin: 30px;
   position: relative;
   border: 1px solid #ddd;
   background: #fff;
+  -webkit-transition: all 0.2s ease-in;
+  &.show{
+    visibility: visible;
+    -webkit-animation: cd-bounce-1 0.6s;
+    -moz-animation: cd-bounce-1 0.6s;
+    animation: cd-bounce-1 0.6s;
+  }
+  &.hidden{
+    visibility: hidden;
+  }
   img{
     max-width: 100%;
   }
 }
-
+@-webkit-keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.01);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+@-moz-keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(1);
+  }
+  60% {
+    opacity: 1;
+    -moz-transform: scale(1.01);
+  }
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+@keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    transform: scale(1.01);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
 .article-index{
   margin-left: 200px;
   padding: 15px 0;
@@ -32,19 +95,18 @@
 }
 
 .article-title {
-  color: #080808;
+  color: #696969;
   margin-left: 0px;
   font-weight: 300;
   line-height: 35px;
   margin-bottom: 20px;
-  font-size: 28px;
-  color: #333;
+  font-size: 26px;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
   -o-transition: color 0.3s;
   transition: color 0.3s;
   &:hover{
-    color: #657b83;
+    color: #B0A0AA;
   }
 }
 
@@ -54,17 +116,25 @@
 }
 .article-header{
   border-left: 5px solid;
-  padding: 15px 0px 15px 30px;
+  padding: 15px 0px 15px 25px;
 }
-.article-info{
-  margin: -30px 0 45px 30px;
-  &.info-on-right{
-    margin: 0;
-    float: right;
-  }
+
+.article-info.info-on-right{
+  margin: 10px 0 0 0;
+  float: right;
+}
+.article-info-index.article-info{
+  padding-top: 20px;
+  margin: 30px 30px 0 30px;
+  border-top: 1px solid #ddd;
+}
+.article-info-post.article-info{
+  padding: 0
+  border: none;
+  margin: -30px 0 20px 30px;
 }
 .article-entry{
-  line-height: 2;
+  line-height: 1.8em;
   padding-right: 30px;
   padding-left: 30px;
   p{
@@ -76,6 +146,8 @@
     background: #ddd;
     border: 1px solid #ccc;
     font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+    word-wrap: break-word;
+    font-size: 14px;
   }
   blockquote {
     background: #ddd;
@@ -92,7 +164,6 @@
     font-style: italic;
   }
   ul{
-    margin: 10px 0px;  
     li:before{
       content: "";
       width: 6px;
@@ -102,13 +173,38 @@
       background: #aaa;
       display: inline-block;
       margin-right: 10px;
+      float: left;
+      margin-top: 12px;
     }
   }
-  h2, h3{
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 1.3em;
+  ul,ol{
+    font-size: 14px;
+    margin: 10px 0px;  
+  }
+  li{
+    ul,ol{
+      margin-left: 30px;
+      li:before{
+        content: "";
+        background: #dedede;
+      }
+    }
+  }
+  h1{
+    margin-top: 30px;
+  }
+  h2{
+    margin-top: 20px;
+    font-weight: 300;
     color: #574C4C;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+  }
+  h3,h4,h5,h6{
+    margin-top: 20px;
+    font-weight: 300;
+    color: #574C4C;
+    padding-bottom: 5px;
     border-bottom: 1px solid #ddd;
   }
   video{
@@ -137,11 +233,14 @@
     margin-top: 10px;
     padding: 5px 15px;
     overflow-x: auto;
-    background: #f6f6f6;
     color: #657b83;
     font-size: 10px;
     border: 1px solid #ccc;
+    text-shadow: 0 1px #444;
     font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+    code{
+      font-size: 14px;
+    }
   }
   table{
     width:100%;
@@ -201,11 +300,13 @@
 }
 
 .article-more-link{
+  margin-top: 5px;
   text-align: right;
   a{
     background: #4d4d4d;
     color: #fff;
-    padding: 4px 8px;
+    font-size: 12px;
+    padding: 2px 8px 4px;
     line-height: 16px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;

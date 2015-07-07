@@ -1,15 +1,19 @@
 .archives-wrap{
   position: relative;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin: 0 30px;
   padding-right: 60px;
   border-bottom: 1px solid #eee;
   background: #fff;
+  &:first-child{
+    margin-top: 30px;
+  }
+  &:last-child{
+    margin-bottom: 80px;
+  }
   .archive-year-wrap{
     line-height: 35px;
     width: 200px;
     position: absolute;
-    top: 13px;
     padding-top: 15px;
     font-size: 1.8em;
   }
@@ -22,6 +26,9 @@
 
 .archives {
   position:relative;
+  .article-info{
+    border: none;
+  }
   .archive-article {
     margin-left:200px;
     padding:20px 0;

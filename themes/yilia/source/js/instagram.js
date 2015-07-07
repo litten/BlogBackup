@@ -1,21 +1,14 @@
-var Instagram = (function(){
+define([], function (){
 
 	var _collection = [];
+	var _count = 0;
 
-	var preLoad = function(data){
-		for(var em in data){
-			for(var i=0,len=data[em].srclist.length;i<len;i++){
-				var src = data[em].bigSrclist[i];
-				var img = new Image();
-				img.src = src;
-			}
-		}
-	}
 
 	var render = function(data){
 		for(var em in data){
 			var liTmpl = "";
 			for(var i=0,len=data[em].srclist.length;i<len;i++){
+				
 				liTmpl += '<li>\
 								<div class="img-box">\
 									<a class="img-bg" rel="example_group" href="'+data[em].bigSrclist[i]+'" title="'+data[em].text[i]+'"></a>\
@@ -31,25 +24,27 @@ var Instagram = (function(){
 		$(".instagram").lazyload();
 		changeSize();
 
-		setTimeout(function(){
-			preLoad(data);
-		},3000);
 		
 		$("a[rel=example_group]").fancybox();
 	}
 
 	var replacer = function(str){
-		/*if(str.indexOf("outbound-distilleryimage") >= 0 ){
-			var cdnNum = str.match(/outbound-distilleryimage([\s\S]*?)\//)[1];
-			var arr = str.split("/");
-			return "http://distilleryimage"+cdnNum+".ak.instagram.com/"+arr[arr.length-1];
-		}else{
-			var url = "http://photos-g.ak.instagram.com/hphotos-ak-xpf1/";
-			var arr = str.split("/");
-			return url+arr[arr.length-1];
-		}*/
 		var arr = str.split("/");
 		return "/assets/ins/"+arr[arr.length-1];
+		// if(str.indexOf("outbound-distilleryimage") >= 0 ){
+		// 	var cdnNum = str.match(/outbound-distilleryimage([\s\S]*?)\//)[1];
+		// 	var arr = str.split("/");
+		// 	return "http://distilleryimage"+cdnNum+".ak.instagram.com/"+arr[arr.length-1];
+		// }else{
+		// 	var url = "http://photos-g.ak.instagram.com/hphotos-ak-xpf1/";
+		// 	var arr = str.split("/");
+		// 	return url+arr[arr.length-1];
+		// }
+
+		// data[em].srclist[i] = data[em].srclist[i].replace("http://photos-g.ak.instagram.com/hphotos-ak-xpf1/", "/assets/ins/")
+		// 		.replace("http://distilleryimage11.ak.instagram.com/", "/assets/ins/")
+		// 		.replace("http://distilleryimage4.ak.instagram.com/", "/assets/ins/")
+		// 		.replace("http://distilleryimage9.ak.instagram.com/", "/assets/ins/");
 	}
 
 	var ctrler = function(data){
@@ -63,7 +58,7 @@ var Instagram = (function(){
 			var text = data[i].caption.text;
 			var key = y+"-"+m;
 			if(imgObj[key]){
-				imgObj[key].srclist.push(bigSrc);
+				imgObj[key].srclist.push(src);
 				imgObj[key].bigSrclist.push(bigSrc);
 				imgObj[key].text.push(text);
 			}else{
@@ -84,13 +79,14 @@ var Instagram = (function(){
 		$.ajax({
 			url: url,
 			type:"GET",
-			dataType:"jsonp",
+			// dataType:"jsonp",
 			success:function(re){
 				if(re.meta.code == 200){
 					_collection = _collection.concat(re.data);
 					var next = re.pagination.next_url;
 					if(next){
-						getList(next);
+						_count++;
+						getList("/instagram/ins"+_count+".json");
 					}else{
 						$(".open-ins").html("图片来自instagram，点此访问");
 						ctrler(_collection);
@@ -98,6 +94,9 @@ var Instagram = (function(){
 				}else{
 					alert("access_token timeout!");
 				}
+			},
+			error: function(re){
+				console.log(re);
 			}
 		});
 	}
@@ -128,11 +127,9 @@ var Instagram = (function(){
 				console.log("Please open 'http://instagram.com/developer/clients/manage/' to get your client-id.");
 				return;
 			}
-			getList("https://api.instagram.com/v1/users/438522285/media/recent/?client_id="+insid+"&count=100");
+			getList("/instagram/ins"+_count+".json");
+			//getList("https://api.instagram.com/v1/users/438522285/media/recent/?client_id="+insid+"&count=100");
 			bind();
 		}
 	}
-})();
-$(function(){
-	Instagram.init();
-})
+});

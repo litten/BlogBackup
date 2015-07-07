@@ -34,10 +34,11 @@ filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
-highlight:
-  enable: true
-  line_number: true
-  tab_replace: 　　
+highlight:                                                                                                                                                                                                   
+  enable: true                                                                                                                                                                                               
+  auto_detect: true                                                                                                                                                                                          
+  line_number: true                                                                                                                                                                                          
+  tab_replace: ''
 
 # Category & Tag
 default_category: uncategorized
@@ -85,10 +86,9 @@ exclude_generator:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: github
+  type: git
   repository: https://github.com/litten/litten.github.com.git
   branch: master
-
 
 sitemap:
     path: sitemap.xml
