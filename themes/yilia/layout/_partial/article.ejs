@@ -50,7 +50,7 @@
   <% } %>
 </article>
 
-<% if (!index && theme.share){ %>
+<% if (is_post() && theme.share && post.slug != "instagram"){ %>
 <%- partial('post/share') %>
 <% } %>
 

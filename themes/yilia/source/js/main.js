@@ -104,7 +104,7 @@ require([], function (){
 	
 	//是否加载ins
 	if($("#post-instagram").length != 0){
-		require(['/js/instagram.js', '/js/jquery.lazyload.js'], function(ins){
+		require(['/js/instagram.js', '/fancybox/jquery.fancybox.js', '/js/jquery.lazyload.js'], function(ins){
 			ins.init();
 		});
 	}

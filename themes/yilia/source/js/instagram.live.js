@@ -1,5 +1,4 @@
-var Instagram = (function(){
-
+define([], function (){
 	var _collection = [];
 
 	var preLoad = function(data){
@@ -130,7 +129,4 @@ var Instagram = (function(){
 			bind();
 		}
 	}
-})();
-$(function(){
-	Instagram.init();
-})
+});
