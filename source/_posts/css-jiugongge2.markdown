@@ -6,6 +6,7 @@ comments: true
 tags: 
 	- css
 ---
+
 书接上回，[上回在这](http://litten.github.com/2012/12/14/css-jiugongge/)。
 
 > 9个元素，每个50*50px，排成九宫格

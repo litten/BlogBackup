@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "还是丽江有意思"
-date: 2014-09-26 23:53
+date: 2014-09-26 0:53
 comments: true
 tags: 
 	- 生活 

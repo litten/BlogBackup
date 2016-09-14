@@ -8,6 +8,7 @@ tags:
 	- 随笔
 brief: "第一次有冲动为一个游戏写文字"
 ---
+
 ![刺客信条-兄弟会海报](/assets/blogImg/ckxt0.jpg)     
 > Nothing is true, everything is permitted.万物皆虚，万事皆允。        
 

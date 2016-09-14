@@ -6,6 +6,7 @@ comments: true
 tags: 
 	- web
 ---
+
 ##**一、写在前面**     
 在收集资料时，我查询和学习了许多介绍OAuth的文章，这些文章有好有坏，但大多是从个例出发。因此我想从官方文档出发，结合在stackoverflow上的一些讨论，一并整理一下。整理的内容分为OAuth1.0a和OAuth2两部分。
 > OAuth 1.0a：One Leg ->Two Leg -> Three Legged            

@@ -5,7 +5,9 @@ date: 2012-12-14 19:15
 comments: true
 tags: 
 	- css
+key: "3"
 ---
+
 前段时间，我的 leader Henry在群里面分享了一道[一淘](http://www.etao.com/)的面试题。         题目非常的有趣，忙完前阵的工作之后突然记起，也尝试做了一下。
 
 > 9个元素，每个50*50px，排成九宫格

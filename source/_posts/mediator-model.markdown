@@ -7,6 +7,7 @@ tags:
 	- coffeescript 
 	- 模式
 ---
+
 ![实况足球](/assets/blogImg/mediator1.jpg)   
 > 你需要一种设计模式，一定是哪里出问题了。这问题是指语言天生缺陷，不得不去寻找一种通用的解决方案。
 

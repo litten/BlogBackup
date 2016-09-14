@@ -7,6 +7,7 @@ tags:
 	- web
 brief: "让我来当一回不靠谱的说书人"
 ---
+
 ![来搞一记Oauth吧](/assets/blogImg/rabbit.jpg) 
 > 那些简单的故事，就别用复杂的方式传诵
 

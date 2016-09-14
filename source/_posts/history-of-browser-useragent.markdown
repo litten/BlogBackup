@@ -8,6 +8,7 @@ tags:
      - 浏览器
 brief: "关于UserAgent的一篇野史"
 ---
+
 ![其实应该叫做浏览器约架史](/assets/blogImg/browser-history.jpg)   
 
 某天，我做一个小项目，需要判断一下浏览器类型。简单的呀。

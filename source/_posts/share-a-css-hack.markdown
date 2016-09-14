@@ -7,6 +7,7 @@ tags:
 	- css
 key: "5"
 ---
+
 ###一、分享一个IE6，7的css hack bug。    
 ![css hack](/assets/blogImg/css_hack.jpg)   
 > IE和我们之间，肯定有一个是傻逼，如果它不是，那我们准是。不然很多事情没法解释…  ——多么痛的领悟 

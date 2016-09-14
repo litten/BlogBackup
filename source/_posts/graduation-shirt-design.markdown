@@ -7,6 +7,7 @@ tags:
 	- 设计
 brief: "宁愿失败地做你爱做的事情，也不要成功地做你恨做的事情"
 ---
+
 ![乔治·伯恩斯，美国著名喜剧演员，八十高龄时夺得了奥斯卡奖](/assets/blogImg/bys0.jpg)  
 > “宁愿失败地做你爱做的事情，也不要成功地做你恨做的事情。” （I honestly think it is better to be a failure at something you love than to be a success at something you hate.） —— George Burns
 
