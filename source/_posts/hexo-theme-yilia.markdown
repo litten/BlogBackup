@@ -66,7 +66,7 @@ git pull
 menu:
   主页: /
   所有文章: /archives
-  # 随笔: /tags/随笔
+  # 旧事: /tags/旧事
 
 # SubNav
 subnav:

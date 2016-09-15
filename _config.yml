@@ -4,7 +4,7 @@
 
 # Site
 title: Litten的博客
-subtitle: 热爱大海与冷笑话的黎小腾君
+subtitle: 胆小认生，不易相处
 description: 华中科技大学09级，就职于腾讯SNG。擅长各项前端技能，深入研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。 
 author: Litten
 email: litten225@qq.com
@@ -80,6 +80,11 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
+# plugins:
+#  - hexo-generator-feed
+#  - hexo-generator-baidu-sitemap
+#  - hexo-generator-sitemap
+
 theme: yilia
 exclude_generator:
 
@@ -92,6 +97,8 @@ deploy:
 
 sitemap:
     path: sitemap.xml
+baidusitemap:
+    path: baidusitemap.xm
 
 feed:
     type: atom

@@ -4,7 +4,7 @@ title: "把自己锁在杯子里"
 date: 2014-01-10 20:30
 comments: true
 tags: 
-	- 随笔 
+	- 旧事 
 	- 药别停
 ---
 

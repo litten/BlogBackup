@@ -4,7 +4,7 @@ title: "如何成功做出一款没人使用的产品"
 date: 2013-12-20 11:55
 comments: true
 tags: 
-	- 随笔 
+	- 旧事 
 	- 药别停
 brief: "Baby，zhè辈子最炫酷de产品只yǒunǐyī个…"
 ---

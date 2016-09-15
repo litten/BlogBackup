@@ -4,7 +4,7 @@ title: "失眠故事四【扎龙人】"
 date: 2016-02-09 03:55
 comments: true
 tags: 
-	- 随笔
+	- 旧事
 ---
 
 ![](/assets/blogImg/dragon.jpg)

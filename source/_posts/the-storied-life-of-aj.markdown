@@ -4,7 +4,7 @@ title: "从《岛上书店》说开去"
 date: 2016-01-04 21:30
 comments: true
 tags: 
-	- 随笔
+	- 旧事
 ---
 
 ![](/assets/blogImg/aj.jpg)

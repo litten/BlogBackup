@@ -4,7 +4,7 @@ title: "和弦推导逻辑简析"
 date: 2015-05-25 23:01
 comments: true
 tags: 
-	- 随笔 
+	- 旧事 
 ---
 
 ![Image By Dustin Wallace](/assets/blogImg/chord1.jpg) 

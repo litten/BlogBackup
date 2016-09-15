@@ -5,7 +5,7 @@ date: 2014-09-26 0:53
 comments: true
 tags: 
 	- 生活 
-	- 随笔
+	- 旧事
 ---
 
 ![丽江古城](/assets/blogImg/lijiang.jpg)   

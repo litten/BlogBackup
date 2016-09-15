@@ -5,7 +5,7 @@ date: 2013-11-07 18:55
 comments: true
 tags: 
 	- 产品 
-	- 随笔
+	- 旧事
 brief: "读《通用设计法则》"
 ---
 
