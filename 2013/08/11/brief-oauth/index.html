@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>谈谈OAuth1,OAuth2异同 | Litten的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##一、写在前面在收集资料时，我查询和学习了许多介绍OAuth的文章，这些文章有好有坏，但大多是从个例出发。因此我想从官方文档出发，结合在stackoverflow上的一些讨论，一并整理一下。整理的内容分为OAuth1.0a和OAuth2两部分。
+
+OAuth 1.0a：One Leg -&amp;gt;Two Leg -&amp;gt; Three LeggedOAuth 2:Two Leg -&amp;gt;Thre">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谈谈OAuth1,OAuth2异同">
+<meta property="og:url" content="http://litten.github.io/2013/08/11/brief-oauth/index.html">
+<meta property="og:site_name" content="Litten的博客">
+<meta property="og:description" content="##一、写在前面在收集资料时，我查询和学习了许多介绍OAuth的文章，这些文章有好有坏，但大多是从个例出发。因此我想从官方文档出发，结合在stackoverflow上的一些讨论，一并整理一下。整理的内容分为OAuth1.0a和OAuth2两部分。
+
+OAuth 1.0a：One Leg -&amp;gt;Two Leg -&amp;gt; Three LeggedOAuth 2:Two Leg -&amp;gt;Thre">
+<meta property="og:updated_time" content="2016-09-12T16:41:43.806Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谈谈OAuth1,OAuth2异同">
+<meta name="twitter:description" content="##一、写在前面在收集资料时，我查询和学习了许多介绍OAuth的文章，这些文章有好有坏，但大多是从个例出发。因此我想从官方文档出发，结合在stackoverflow上的一些讨论，一并整理一下。整理的内容分为OAuth1.0a和OAuth2两部分。
+
+OAuth 1.0a：One Leg -&amp;gt;Two Leg -&amp;gt; Three LeggedOAuth 2:Two Leg -&amp;gt;Thre">
+  
+    <link rel="alternative" href="/atom.xml" title="Litten的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/assets/blogImg/litten.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Litten</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">热爱大海与冷笑话的黎小腾君</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/instagram">相册</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/litten" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/litten225" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Litten</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/assets/blogImg/litten.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Litten</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">热爱大海与冷笑话的黎小腾君</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/litten" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/litten225" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-brief-oauth" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      谈谈OAuth1,OAuth2异同
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##<strong>一、写在前面</strong><br>在收集资料时，我查询和学习了许多介绍OAuth的文章，这些文章有好有坏，但大多是从个例出发。因此我想从官方文档出发，结合在stackoverflow上的一些讨论，一并整理一下。整理的内容分为OAuth1.0a和OAuth2两部分。</p>
+<blockquote>
+<p>OAuth 1.0a：One Leg -&gt;Two Leg -&gt; Three Legged<br>OAuth 2:Two Leg -&gt;Three Legged (附：Refresh Token的方式)</p>
+</blockquote>
+<p>这两种模式都是按箭头从左往右安全性递增，其实现也会相对复杂。关于官方的这种leg（腿？）的说法，在中文翻译中比较少有文章提及。下面分别来介绍OAuth的这5种授权流程。</p>
+<a id="more"></a>
+<p>##<strong>二、OAuth1.0a</strong><br><strong>2.1 OAuth 1.0a (One Leg)</strong></p>
+<ol>
+<li>应用给服务器发送一个签名请求，附带以下参数：           <ul>
+<li>oauth_token Empty String             </li>
+<li>oauth_consumer_key                  </li>
+<li>oauth_timestamp                   </li>
+<li>oauth_nonce                    </li>
+<li>oauth_signature                  </li>
+<li>oauth_signature_method              </li>
+<li>oauth_version Optional                  </li>
+</ul>
+</li>
+<li>服务验证并授予对资源的访问                 </li>
+<li>应用程序利用请求的资源                </li>
+</ol>
+<p><strong>2.2 OAuth 1.0a (Two Legs)</strong></p>
+<ol>
+<li>应用发送一个签名请求，以获取 Request Token：                 <ul>
+<li>oauth_consumer_key                          </li>
+<li>oauth_timestamp                     </li>
+<li>oauth_nonce                        </li>
+<li>oauth_signature                  </li>
+<li>oauth_signature_method                       </li>
+<li>oauth_version Optional                      </li>
+</ul>
+</li>
+<li>服务器返回Request Token：                   <ul>
+<li>oauth_token                    </li>
+<li>oauth_token_secret                  </li>
+<li>Additional Parameters / Arguments                   </li>
+</ul>
+</li>
+<li>发送签名请求，用Request Token换取Access Token                      <ul>
+<li>oauth_token Request Token                    </li>
+<li>oauth_consumer_key                   </li>
+<li>oauth_nonce                 </li>
+<li>oauth_signature                      </li>
+<li>oauth_signature_method                    </li>
+<li>oauth_version                           </li>
+</ul>
+</li>
+<li>服务器返回Access Token和Token Secret    </li>
+<li>应用通过Access Token和Token Secret利用请求的资源</li>
+</ol>
+<p><strong>2.3 OAuth 1.0a (Three Legged)</strong></p>
+<ol>
+<li>应用发送一个签名请求，以获取 Request Token：                <ul>
+<li>oauth_consumer_key                       </li>
+<li>oauth_timestamp                       </li>
+<li>oauth_nonce                       </li>
+<li>oauth_signature                       </li>
+<li>oauth_signature_method                       </li>
+<li>oauth_version Optional                       </li>
+</ul>
+</li>
+<li>服务器返回Request Token：                       <ul>
+<li>oauth_token                       </li>
+<li>oauth_token_secret                       </li>
+<li>oauth_callback_confirmed                       </li>
+<li>… Additional Parameters / Arguments                       </li>
+</ul>
+</li>
+<li>发送给用户授权的URL                       <ul>
+<li>oauth_token                       </li>
+</ul>
+</li>
+<li>提示用户进行授权                       </li>
+<li>用户进行授权                       </li>
+<li>授权结束后返回应用，附带上：                       <ul>
+<li>oauth_token                       </li>
+<li>oauth_verifier                       </li>
+</ul>
+</li>
+<li>发送签名请求，用Request Token换取Access Token                       <ul>
+<li>oauth_token Request Token                       </li>
+<li>oauth_consumer_key                       </li>
+<li>oauth_nonce                       </li>
+<li>oauth_signature                       </li>
+<li>oauth_signature_method                       </li>
+<li>oauth_version                       </li>
+<li>oauth_verifier                       </li>
+</ul>
+</li>
+<li>服务器返回Access Token和Token Secret                       </li>
+<li>应用通过Access Token和Token Secret利用请求的资源                       </li>
+</ol>
+<p>##<strong>三、OAuth2</strong>         </p>
+<p><strong> 3.1 OAuth 2 (Two Legged)</strong></p>
+<p>3.1.1 客户端凭据方式              </p>
+<ol>
+<li>应用发送请求到服务器：                   <ul>
+<li>grant_type = client_credentials<br>如果没有使用Authorization（Authorization: Basic Base64(client_id:client_secret)） 的header，必须附带参数为：                   </li>
+<li>client_id                   </li>
+<li>client_secret                   </li>
+</ul>
+</li>
+<li>服务器以Access Token回应                   <ul>
+<li>access_token                   </li>
+<li>expires_in                   </li>
+<li>token_type                   </li>
+</ul>
+</li>
+</ol>
+<p>3.1.2 隐式授予方式               </p>
+<ol>
+<li>应用发送请求到服务器：                                                <ul>
+<li>response_type = token                      </li>
+<li>redirect_uri This is a server-side Redirection URI hosted by the provider or yourself.                      </li>
+<li>scope                      </li>
+<li>state Optional                      </li>
+<li>client_id                      </li>
+</ul>
+</li>
+<li>用户可根据需要授权。                      <ul>
+<li>username                      </li>
+<li>password                      </li>
+</ul>
+</li>
+<li>服务器将响应包含access_token在内的redirect_uri                      </li>
+<li>应用程序跳转至redirect_uri                      </li>
+<li>redirect_uri将响应一段脚本或HTML片段。响应的脚本或HTML片段包含参数access_token，还有您可能需要的任何其他参数。                  </li>
+</ol>
+<p>3.1.3 资源所有者密码方式                  </p>
+<ol>
+<li>应用向资源所有者请求凭证                   <ul>
+<li>username                   </li>
+<li>password                   </li>
+</ul>
+</li>
+<li>应用使用凭证，向服务器发送请求                   <ul>
+<li>grant_type = password                   </li>
+<li>username                   </li>
+<li>password<br>url看起来会像这样：grant_type=password&amp;username=my_username&amp;password=my_password<br>如果你没有使用Authorization的header，必须附带上参数：                   </li>
+<li>client_id                   </li>
+<li>client_secret<br>url看起来会像是：<br>grant_type=password&amp;username=my_username&amp;password=my_password&amp;client_id=random_string&amp;client_secret=random_secret                   </li>
+</ul>
+</li>
+<li>服务器返回Access Toke                   <ul>
+<li>access_token                   </li>
+<li>expires_in                   </li>
+<li>token_type                   </li>
+</ul>
+</li>
+</ol>
+<p><strong> 3.2 OAuth 2 (Three Legged) </strong></p>
+<ol>
+<li>应用重定向用户到授权服务：                    <ul>
+<li>client_id                    </li>
+<li>redirect_uri                    </li>
+<li>response_type                    </li>
+<li>state Optional; Unique identifier to protect against CSRF                    </li>
+<li>scope Optional; what data your application can access.<br>url看起来会像是：<br>oauth_service/login/oauth/authorize?client_id=3MVG9lKcPoNINVB&amp;redirect_uri=<a href="http://localhost/oauth/code_callback&amp;scope=user" target="_blank" rel="external">http://localhost/oauth/code_callback&amp;scope=user</a>                    </li>
+</ul>
+</li>
+<li>用户登录服务器并确认授权给应用                    </li>
+<li>服务器重定向用户到redirect_url ，附带参数：                    <ul>
+<li>code                    </li>
+<li>state                    </li>
+</ul>
+</li>
+<li>应用拿到code，并换取Access Token                    <ul>
+<li>client_id                    </li>
+<li>client_secret                    </li>
+<li>code                    </li>
+<li>redirect_uri Optional;                    </li>
+<li>grant_type = “authorization_code”                    </li>
+</ul>
+</li>
+<li>如果的client_id和client_secret是有效的，服务器将调用一个回调redirect_url，包含ACCESS_TOKEN                    <ul>
+<li>access_token                    </li>
+<li>expires_in                    </li>
+<li>refresh_token                    </li>
+</ul>
+</li>
+<li>应用保存ACCESS_TOKEN，在随后的请求中使用。通常这个值被存储在session或或cookie，需要时作为授权请求的参数。   </li>
+</ol>
+<p><strong> 3.3 OAuth 2 (Refresh Token 刷新token) </strong></p>
+<p>在OAuth2中，Token会有过期时间，我们必须去refresh_token，使用其他一些先前获得的参数，生成一个新的token。这是一个容易得多的流程。    </p>
+<ol>
+<li>创建刷新令牌请求                  <ul>
+<li>grant_type = “refresh_token”                      </li>
+<li>scope Optional; Cannot have any new scopes not previously defined.                     </li>
+<li>refresh_token                     </li>
+<li>client_id                     </li>
+<li>client_secret                     </li>
+</ul>
+</li>
+<li>服务验证和响应以下参数：                     <ul>
+<li>access_token                     </li>
+<li>issued_at                     </li>
+</ul>
+</li>
+</ol>
+<p>##<strong>四、stackoverflow上的一些问答</strong>         </p>
+<p><strong>Q</strong>：OpenID和OAuth的区别是什么？<br><strong>A</strong>：OpenID是有关身份验证（即证明你是谁），OAuth有关授权（即授予访问权限），推荐博文：<a href="http://cakebaker.42dh.com/2008/04/01/openid-versus-oauth-from-the-users-perspective/" target="_blank" rel="external">从用户的角度来看OpenID和OAuth</a>                    </p>
+<p><strong>Q</strong>：OAuth2与OAuth1不同的地方是？有人可以简单的解释的OAuth2和OAuth1之间的区别吗？ OAuth1现在已经过时，应实施的OAuth2？我没有看到许多实现的OAuth2，大多数仍在使用OAuth，这让我怀疑的OAuth2的准备使用。是吗？<br><strong>A</strong>：OAuth2能更好地支持不是基于浏览器的应用。对于不是基于浏览器的应用程序，这是对OAuth的主要挑战。例如，在OAuth1.0，桌面应用或手机应用必须引导用户打开浏览器所需的服务，与服务进行身份验证，并复制令牌从服务返回给应用程序。这里的主要批评是针对用户体验。使用OAuth2.0，可以用新的方式为用户的应用程序获得授权。<br>OAuth2.0不再需要客户端应用程序拥有密钥。这让人回想起老的Twitter认证的API，它并不需要应用得到HMAC哈希令牌和请求字符串。使用OAuth2.0，应用程序可以通过HTTPS获得令牌。<br>OAuth2.0的签名流程简单得多。没有更多的特殊解析，排序，或编码。<br>OAuth2.0的访问令牌是“短命”的。通常情况下，OAuth1.0的访问令牌可以存储一年或一年以上（Twitter从来没有让他们到期）。 OAuth的2.0有刷新令牌的概念。虽然我不能完全肯定这是什么意思，我的猜测是，您的访问令牌可以是短暂存储的（即基于会话），而你可以刷新令牌。你使用刷新令牌获取新的访问令牌，而不是让用户重新授权您的应用程序。<br>最后，OAuth2.0使得负责处理的OAuth请求的服务器和处理用户的授权服务器之间的角色有一个干净的分离。更多信息，在上述的文章中详述。</p>
+<p><strong>Q</strong>：OAuth2服务器群怎么使用state来防范CSRF？<br><strong>A</strong>：state只是一个随机的字符串，可以做这样的事情：$state = md5(uniqid(rand(), TRUE));在session中记录satate，以便稍后你能做验证。一些额外的资料：<a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-threatmodel-00" target="_blank" rel="external">OAuth2威胁文件模型</a>，<a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-26#section-10.12" target="_blank" rel="external">特别CSRF保护</a>                                    </p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2013/08/11/brief-oauth/" class="archive-article-date">
+  	<time datetime="2013-08-11T02:55:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-08-11</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2013/08/20/oauth-rabbit/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          兔子，胡萝卜与OAuth的故事
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/05/03/my-news-reader-box/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网易“聚合阅读”布局的实现</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="brief-oauth" data-title="谈谈OAuth1,OAuth2异同" data-url="http://litten.github.io/2013/08/11/brief-oauth/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"litten-hexo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Litten
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/"
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/coffeescript/" style="font-size: 12px;">coffeescript</a> <a href="/tags/css/" style="font-size: 14px;">css</a> <a href="/tags/css3/" style="font-size: 12px;">css3</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/html5/" style="font-size: 16px;">html5</a> <a href="/tags/js/" style="font-size: 18px;">js</a> <a href="/tags/octopress/" style="font-size: 12px;">octopress</a> <a href="/tags/web/" style="font-size: 18px;">web</a> <a href="/tags/主题/" style="font-size: 14px;">主题</a> <a href="/tags/产品/" style="font-size: 12px;">产品</a> <a href="/tags/前端/" style="font-size: 14px;">前端</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/杂谈/" style="font-size: 12px;">杂谈</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/浏览器/" style="font-size: 12px;">浏览器</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/生活/" style="font-size: 16px;">生活</a> <a href="/tags/经验/" style="font-size: 10px;">经验</a> <a href="/tags/药别停/" style="font-size: 12px;">药别停</a> <a href="/tags/设计/" style="font-size: 12px;">设计</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a> <a href="/tags/黑科技/" style="font-size: 10px;">黑科技</a>
+    			</div>
+    	</section>
+    
+
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">Litten，鹅厂前端&lt;br&gt;&lt;br&gt;胆小认生，不易相处&lt;br&gt;年轻无为，卖马为生</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

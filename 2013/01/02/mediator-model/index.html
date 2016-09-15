@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>模式应用小分享——中介者模式(mediator) | Litten的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="你需要一种设计模式，一定是哪里出问题了。这问题是指语言天生缺陷，不得不去寻找一种通用的解决方案。
+
+程序设计最后的终点，就是要找到一种解决方案来解决问题。这句话正确无疑。但我又想起有个冷笑话，A对B说：我教你怎么去赢这盘象棋，B问怎样，A回答说：吃掉对方的“帅”就赢了啊。略去中间的过程，直接描述到结果，这其实是毫无意义的。而设计模式，又恰恰关乎中间解决问题的过程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模式应用小分享——中介者模式(mediator)">
+<meta property="og:url" content="http://litten.github.io/2013/01/02/mediator-model/index.html">
+<meta property="og:site_name" content="Litten的博客">
+<meta property="og:description" content="你需要一种设计模式，一定是哪里出问题了。这问题是指语言天生缺陷，不得不去寻找一种通用的解决方案。
+
+程序设计最后的终点，就是要找到一种解决方案来解决问题。这句话正确无疑。但我又想起有个冷笑话，A对B说：我教你怎么去赢这盘象棋，B问怎样，A回答说：吃掉对方的“帅”就赢了啊。略去中间的过程，直接描述到结果，这其实是毫无意义的。而设计模式，又恰恰关乎中间解决问题的过程。">
+<meta property="og:image" content="http://litten.github.io/assets/blogImg/mediator1.jpg">
+<meta property="og:updated_time" content="2016-09-12T16:40:01.068Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模式应用小分享——中介者模式(mediator)">
+<meta name="twitter:description" content="你需要一种设计模式，一定是哪里出问题了。这问题是指语言天生缺陷，不得不去寻找一种通用的解决方案。
+
+程序设计最后的终点，就是要找到一种解决方案来解决问题。这句话正确无疑。但我又想起有个冷笑话，A对B说：我教你怎么去赢这盘象棋，B问怎样，A回答说：吃掉对方的“帅”就赢了啊。略去中间的过程，直接描述到结果，这其实是毫无意义的。而设计模式，又恰恰关乎中间解决问题的过程。">
+<meta name="twitter:image" content="http://litten.github.io/assets/blogImg/mediator1.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Litten的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/assets/blogImg/litten.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Litten</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">热爱大海与冷笑话的黎小腾君</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/instagram">相册</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/litten" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/litten225" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Litten</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/assets/blogImg/litten.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Litten</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">热爱大海与冷笑话的黎小腾君</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/litten" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/litten225" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-mediator-model" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      模式应用小分享——中介者模式(mediator)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/assets/blogImg/mediator1.jpg" alt="实况足球">   </p>
+<blockquote>
+<p>你需要一种设计模式，一定是哪里出问题了。这问题是指语言天生缺陷，不得不去寻找一种通用的解决方案。</p>
+</blockquote>
+<p>程序设计最后的终点，就是要找到一种解决方案来解决问题。这句话正确无疑。但我又想起有个冷笑话，A对B说：我教你怎么去赢这盘象棋，B问怎样，A回答说：吃掉对方的“帅”就赢了啊。略去中间的过程，直接描述到结果，这其实是毫无意义的。而设计模式，又恰恰关乎中间解决问题的过程。<br><a id="more"></a><br>现在关于模式的文章与书籍层出不穷，我自己也在看。但当我将理论回归应用的时候，一下子就懵了。这么多的模式，就像是一张又一张的棋谱教学，它告诉你要这么那么做，但你很少知道如何对症下药。也许到最后你东拼西凑总可以把“帅”吃掉，但遇到一个问题，如何选择下一步的模式见招拆招，已达到最有效率的胜利呢？</p>
+<p>因此我想写一些模式在应用方面的小分享。</p>
+<p>##<strong>中介者，你想到了什么？</strong><br>我们可以从实况足球谈起。一场足球比赛，进球加分，犯规处罚，控制时间，这些事件都由一个人来处决，我们叫他裁判，其实他就是比赛的中介者。裁判童鞋，代表了一种<strong>“控制集中化”</strong>的理念，这就是中介者模式的关键。试想一下，我们平时打球一般没有裁判，比分多少，是否犯规等都是由运动员我们自己来记录的，而我们往往都会有记错比分或者犯规纠纷的经验吧。这反应到程序上，就可以说是交互的复杂性带来的混乱。因此，我们在正规的比赛中必须要有裁判，运动员才可以把全部精力放到比赛上面去。于是中介者的引入，把运动员自己的复杂性变成了中介者的复杂性。</p>
+<p>再深入一点，为什么有了裁判后，运动员的精力可以更集中呢？原因很简单，我们不需要记对方的分数了，犯规了也用不着自己去跟对方辩论。也就是说，两个队伍之间完全不用有比赛信息的直接交流了，取而代之的是把自己的信息转交给了裁判，让裁判去衡量两个队伍的信息，再进行加分，去判定是否犯规。这时我们可以说，这两个队伍对象解耦了，队伍对象之间的解耦，在客户端程序设计上的效果是很显著的，你很容易再引入一个队伍对象进行管理。试想一下如果有一场奇怪的球赛是有三个，四个队伍一起进行的，有了裁判这个中介者，运动员还是可以集中精力去比赛，否则他们就要去再多记比分了。</p>
+<p>##<strong>一个例子</strong></p>
+<p><iframe id="demoIframe" src="/assets/demo/mediator/demo.html" width="500" height="314" scrolling="no"></iframe><br>或者点这里弹出看<a href="/assets/demo/mediator/demo.html">demo</a><br>三国无双游戏中，有个经典的桥段，大家称为“拼刀”。当两个武将触发拼刀时，武将用武器相互抵着，玩家需要疯狂的按攻击键，一定时间内，谁按的次数多，谁就能赢得拼刀的胜利。其实这就是一个中介者模式的好例子。</p>
+<p>其实不止是像这种“比赛”，想想像电力公司，将各家的电力进行集中管理，像给大家批阅试卷，给出成绩的老师，像一下子可以灭所有灯的寝室楼阿姨，像中国人民代表大会…额好吧，总之就是这么回事。</p>
+<p>##<strong>demo代码解析 coffeescript实现（50行）</strong></p>
+<p>首先我们设定<code>Player</code>对象，它有points和name属性，同时有一个prototype的属性play，使自己的分数加以，并将这信息通知中介者mediator：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">Player</span> = <span class="params">(name)</span>-&gt;</span></div><div class="line">	@points = <span class="number">0</span></div><div class="line">	@name = name</div><div class="line"></div><div class="line">Player::play = <span class="function">-&gt;</span></div><div class="line">	@points++</div><div class="line">	mediator.played()</div></pre></td></tr></table></figure></p>
+<p>然后我们设定<code>scoreboard</code>对象，这是一个得分板，在MVC模式当中，充当了V(view)，视图。它的使命就是update，将传递给它的数据score展示出来。因为裁判是mediator，它判定队伍得分后(得到score)，他必须通知电视台(对应scoreboard)，让他们把分数展示出来：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">scoreboard = </div><div class="line">	element:</div><div class="line">		<span class="built_in">document</span>.getElementById <span class="string">"results"</span></div><div class="line">	update:<span class="function"><span class="params">(score)</span>-&gt;</span></div><div class="line">		msg = <span class="string">''</span></div><div class="line">		<span class="keyword">for</span> key,value <span class="keyword">of</span> score </div><div class="line">			<span class="keyword">if</span> score.hasOwnProperty key</div><div class="line">				msg = msg+<span class="string">"&lt;span&gt;&lt;strong&gt;<span class="subst">#&#123;key&#125;</span>&lt;/strong&gt;:<span class="subst">#&#123;value&#125;</span>&lt;/span&gt;"</span></div><div class="line">		@element.innerHTML = msg</div><div class="line">		diff = score.Home - score.Guest</div><div class="line">		<span class="keyword">if</span> diff &gt; <span class="number">15</span> </div><div class="line">			alert <span class="string">"Home Win!"</span></div><div class="line">			location.reload();</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> diff &lt;<span class="number">-15</span></div><div class="line">			alert <span class="string">"Guest Win!"</span></div><div class="line">			location.reload();</div><div class="line">		<span class="keyword">else</span></div><div class="line">			<span class="built_in">document</span>.getElementById(<span class="string">'barGuest'</span>).style.width = <span class="number">150</span> + (diff*<span class="number">10</span>) + <span class="string">'px'</span></div></pre></td></tr></table></figure></p>
+<p>最后的片段就是中介者，<code>mediator</code>。它首先要决定开始比赛，也就是setup，新建了一个名称为Home，一个名称为Guest的Player model。当两个player得分时，mediator执行played，收集两方的分数，构造成score对象，并将这score对象交由scoreboard展示。keypress则是用于判断怎样才算得分：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">mediator = </div><div class="line">	players:&#123;&#125;</div><div class="line">	setup:<span class="function">-&gt;</span></div><div class="line">		players = @players</div><div class="line">		players.home = <span class="keyword">new</span> Player <span class="string">'Home'</span></div><div class="line">		players.guest = <span class="keyword">new</span> Player <span class="string">'Guest'</span></div><div class="line">	played:<span class="function">-&gt;</span></div><div class="line">		players = @players</div><div class="line">		score = </div><div class="line">			Home: players.home.points</div><div class="line">			Guest:players.guest.points</div><div class="line">		scoreboard.update score</div><div class="line">	keypress:<span class="function"><span class="params">(e)</span>-&gt;</span></div><div class="line">		e = e|| <span class="built_in">window</span>.event</div><div class="line">		keycode = e.which</div><div class="line">		<span class="keyword">if</span> keycode <span class="keyword">is</span> <span class="number">102</span></div><div class="line">			mediator.players.home.play()</div><div class="line">			<span class="keyword">return</span></div><div class="line">		<span class="keyword">if</span> keycode <span class="keyword">is</span> <span class="number">106</span></div><div class="line">			mediator.players.guest.play()</div><div class="line">			<span class="keyword">return</span></div></pre></td></tr></table></figure></p>
+<p>最后执行，运行程序：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mediator.setup()</div><div class="line"><span class="built_in">window</span>.onkeypress = mediator.keypress</div></pre></td></tr></table></figure></p>
+<p>##<strong>小分享心得</strong><br>中介者模式将控制集中化，colleague对象之间解耦，不必维护各自之间的网状通信，但mediator承受了所有colleague提供过来的信息，肯定会相对复杂。如何优化mediator也会成为一个课题。中介者模式有点像一对多的模型，一个mediator对应多个colleague，而如果现实模型是多对多的，中介者模型视复杂度来说不一定适合。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2013/01/02/mediator-model/" class="archive-article-date">
+  	<time datetime="2013-01-02T04:36:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-01-02</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/coffeescript/">coffeescript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模式/">模式</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2013/04/15/graduation-shirt-design/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          毕业衫的设计初稿以及设计这件小事
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2012/12/31/css3-animater/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">当我想用css3实现一个动作类库</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="mediator-model" data-title="模式应用小分享——中介者模式(mediator)" data-url="http://litten.github.io/2013/01/02/mediator-model/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"litten-hexo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Litten
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/"
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/coffeescript/" style="font-size: 12px;">coffeescript</a> <a href="/tags/css/" style="font-size: 14px;">css</a> <a href="/tags/css3/" style="font-size: 12px;">css3</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/html5/" style="font-size: 16px;">html5</a> <a href="/tags/js/" style="font-size: 18px;">js</a> <a href="/tags/octopress/" style="font-size: 12px;">octopress</a> <a href="/tags/web/" style="font-size: 18px;">web</a> <a href="/tags/主题/" style="font-size: 14px;">主题</a> <a href="/tags/产品/" style="font-size: 12px;">产品</a> <a href="/tags/前端/" style="font-size: 14px;">前端</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/杂谈/" style="font-size: 12px;">杂谈</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/浏览器/" style="font-size: 12px;">浏览器</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/生活/" style="font-size: 16px;">生活</a> <a href="/tags/经验/" style="font-size: 10px;">经验</a> <a href="/tags/药别停/" style="font-size: 12px;">药别停</a> <a href="/tags/设计/" style="font-size: 12px;">设计</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a> <a href="/tags/黑科技/" style="font-size: 10px;">黑科技</a>
+    			</div>
+    	</section>
+    
+
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">Litten，鹅厂前端&lt;br&gt;&lt;br&gt;胆小认生，不易相处&lt;br&gt;年轻无为，卖马为生</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
