@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>兔子，胡萝卜与OAuth的故事 | Litten的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="那些简单的故事，就别用复杂的方式传诵
+
+##【让我来讲几个故事吧】     
+从前，有只老兔子，在仓库里存了一万根胡萝卜，作为给小兔子的遗产。而后他就去周游世界了。小兔子有天想去把萝卜拿出来，却被仓库外的一只兔子拦住了。一问才知道，这是老兔子安排的仓库守卫。和所有故事中的守护者一样，他正直而古板，八字眉下面有着睡眠不足的熊猫眼，世人一般称他为兔门神。兔子想要拿到萝卜，就得说服兔门神呀，于是他">
+<meta property="og:type" content="article">
+<meta property="og:title" content="兔子，胡萝卜与OAuth的故事">
+<meta property="og:url" content="http://litten.github.io/2013/08/20/oauth-rabbit/index.html">
+<meta property="og:site_name" content="Litten的博客">
+<meta property="og:description" content="那些简单的故事，就别用复杂的方式传诵
+
+##【让我来讲几个故事吧】     
+从前，有只老兔子，在仓库里存了一万根胡萝卜，作为给小兔子的遗产。而后他就去周游世界了。小兔子有天想去把萝卜拿出来，却被仓库外的一只兔子拦住了。一问才知道，这是老兔子安排的仓库守卫。和所有故事中的守护者一样，他正直而古板，八字眉下面有着睡眠不足的熊猫眼，世人一般称他为兔门神。兔子想要拿到萝卜，就得说服兔门神呀，于是他">
+<meta property="og:image" content="http://litten.github.io/assets/blogImg/rabbit.jpg">
+<meta property="og:updated_time" content="2016-09-12T16:39:35.998Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="兔子，胡萝卜与OAuth的故事">
+<meta name="twitter:description" content="那些简单的故事，就别用复杂的方式传诵
+
+##【让我来讲几个故事吧】     
+从前，有只老兔子，在仓库里存了一万根胡萝卜，作为给小兔子的遗产。而后他就去周游世界了。小兔子有天想去把萝卜拿出来，却被仓库外的一只兔子拦住了。一问才知道，这是老兔子安排的仓库守卫。和所有故事中的守护者一样，他正直而古板，八字眉下面有着睡眠不足的熊猫眼，世人一般称他为兔门神。兔子想要拿到萝卜，就得说服兔门神呀，于是他">
+<meta name="twitter:image" content="http://litten.github.io/assets/blogImg/rabbit.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Litten的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/assets/blogImg/litten.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Litten</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">胆小认生，不易相处</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/instagram">相册</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/litten" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/litten225" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Litten</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/assets/blogImg/litten.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Litten</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">胆小认生，不易相处</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/litten" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/litten225" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-oauth-rabbit" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      兔子，胡萝卜与OAuth的故事
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/assets/blogImg/rabbit.jpg" alt="来搞一记Oauth吧"> </p>
+<blockquote>
+<p>那些简单的故事，就别用复杂的方式传诵</p>
+</blockquote>
+<p>##<strong>【让我来讲几个故事吧】</strong>     </p>
+<p>从前，有只老兔子，在仓库里存了一万根胡萝卜，作为给小兔子的遗产。而后他就去周游世界了。小兔子有天想去把萝卜拿出来，却被仓库外的一只兔子拦住了。一问才知道，这是老兔子安排的仓库守卫。和所有故事中的守护者一样，他正直而古板，八字眉下面有着睡眠不足的熊猫眼，世人一般称他为兔门神。兔子想要拿到萝卜，就得说服兔门神呀，于是他走了上前…<br><a id="more"></a></p>
+<p>##<strong>【兔子与OAuth1.0的故事】</strong></p>
+<ol>
+<li>兔子首先得证明自己是只兔子，不是狗熊也不是狼，于是他向兔门神出示了身份证</li>
+<li>兔门神说：哦，你是只兔子。但你还得证明你是老兔子的兔崽子呀。兔子说我爸旅游去了，怎么证明呢？兔门神说，这样吧，我把你的身份证拍下来，发送给你爸，让他看下这是不是你。于是兔门神打开了微信……</li>
+<li>正在休假的老兔子看了下照片，回复说证件照好难看毁三观啊，但勉强认得出这货就是我儿子</li>
+<li>兔门神确认这信息后，说，你老爸还是认你这个儿子的</li>
+<li>兔子问，那我可以去拿胡萝卜了没？</li>
+<li>兔门神说，可以了，这样吧，我发你个通行证，以后拿这个来我就不用这么麻烦了。</li>
+</ol>
+<p>##<strong>【兔子与OAuth1.0a的故事】</strong></p>
+<p>这种貌似天衣无缝的形式，却被一只坏兔子看出了破绽。他注意到一个细节，在最后的一步，兔门神都是习惯性的把通行证交给了面前的兔子,而不管这只兔子是不是当初的那只。于是，坏兔子趁兔门神正在和老兔子聊微信的时候，一个劲站在了兔子前面，最后兔门神居然把通行证塞给了他！这怎么可以？于是在第一步和第六步又有了修改。</p>
+<ol>
+<li>兔子出示身份证的同时，也出示了自己的私房照，说，门神大哥呀，后面你记得把通行证给照片上的帅哥！</li>
+<li>……</li>
+<li>……</li>
+<li>……</li>
+<li>……</li>
+<li>兔门神看了下面前的兔子，私房照上的明显P过嘛但勉强认得出是本人，于是才交出了通行证</li>
+</ol>
+<p>##<strong>【兔子与Oauth2.0的故事】</strong></p>
+<p>兔门神回家后，向他的老婆兔女神汇报了今天的工作，更安全的方案使他得意洋洋，没想到被兔女神骂了一顿。兔女神说，兔子证明自己还得带个身份证，你不知道在天朝办个身份证多麻烦吗？让小兔子跟老兔子去聊下微信就可以了干嘛要你插手？兔门神哑口无言，兔女神高贵冷艳的说我有四种方案，给你先说说最常用的一种吧。</p>
+<ol>
+<li>兔子一开始就跟他老爸聊微信了。当然他得明确告诉老爸，他需要打开哪个仓库（因为老兔子有很多儿子，每个儿子去拿萝卜的仓库不一样，兔子要指定一下具体是哪个，问他可不可以）</li>
+<li>老兔子回复说：“just do IT”…</li>
+<li>兔子然后去拿胡萝卜，首先被兔女神拦住了。女神告诉他，你要给我四样东西：老兔子的回复，你的私房照，身份证，还要给我一个密码。兔子愣愣的想了个密码，把这四样东西交了过去</li>
+<li>兔女神把这四种东西混在一起，用魔法变出了两件法宝：一封情书和一撮猴子毛…然后她解释说：拿着我的情书去找我老公，他就让你进仓库了；但是这情书会过期，是出于安全考虑啦，过期后你得召唤我再写一封，召唤出我的步骤就是吹一下猴子毛，像孙悟空那样你就别在意这些细节好伐？</li>
+<li>兔子拿着情书去找兔门神时，发现他由于被妻子分担了压力，明显睡眠好多了…</li>
+</ol>
+<p>##<strong>【演员表】</strong></p>
+<p><strong>兔子</strong>-消费者，也就是第三方应用<br><strong>老兔子</strong>-用户，也就是我们，记住，我们永远是第三方的亲爹<br><strong>仓库</strong>-Oauth提供者，这里有我们保存的资料，比如说新浪微博，qq空间，人人…<br><strong>兔门神</strong>-在前两个故事中，由授权服务器和资源服务器共同扮演，在最后的故事中，只由资源服务器扮演<br><strong>兔女神</strong>-授权服务器，只管授权，不管取资源                   </p>
+<p>##<strong>【重要道具】</strong></p>
+<p><strong>身份证</strong>-签名，将一个http请求以及相应参数字符串化<br><strong>拍下的身份证照片</strong>-Request Token，服务器进行认证<br><strong>通行证</strong>-Access Token，获取资源的凭证<br><strong>私房照</strong>-重定向地址<br><strong>坏兔子</strong>(我把它当成道具而不是演员)-重定向地址劫持<br><strong>仓库的名称</strong>-appId,即对应具体哪个第三方<br><strong>just do it</strong>-Auth code，用户授权号<br><strong>第三个故事的身份证</strong>-client id 客户端帐号<br><strong>密码</strong>-client secret 客户端密码<br><strong>魔法</strong>-将client id，client secket，重定向地址，Auth code生成Access Token<br><strong>情书</strong>-Access Token，获取资源的凭证<br><strong>猴子毛</strong>-Refresh Token，用来在Access Token过期后将其刷新，刷新需带上client id和client secret                        </p>
+<p>##<strong>【说书人说】</strong></p>
+<p>Oauth2.0比起Oauth1.0，没有了第一步的签名，将服务器分开为授权服务器与资源服务器。这是最大的两个特征。开放平台必须得做到对第三方友好，才有利于接入。像Oauth1.0签名的操作，就难倒了许多第三方。也许你知道了Oauth2.0接入步骤简化了些，但也知道其内部实现要更复杂，抛去安全方面的考虑，我认为这是正确的方向。因为，Oauth2.0在某种意义上说，向第三方做到了——“把悲伤留给自己，你的美丽让你带走”。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2013/08/20/oauth-rabbit/" class="archive-article-date">
+  	<time datetime="2013-08-20T04:55:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-08-20</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2013/09/10/my-fairy-tale2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          【梦中的小偷】【织梦人的表白】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/08/11/brief-oauth/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">谈谈OAuth1,OAuth2异同</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="oauth-rabbit" data-title="兔子，胡萝卜与OAuth的故事" data-url="http://litten.github.io/2013/08/20/oauth-rabbit/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"litten-hexo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Litten
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/"
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/coffeescript/" style="font-size: 12px;">coffeescript</a> <a href="/tags/css/" style="font-size: 14px;">css</a> <a href="/tags/css3/" style="font-size: 12px;">css3</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/html5/" style="font-size: 16px;">html5</a> <a href="/tags/js/" style="font-size: 18px;">js</a> <a href="/tags/octopress/" style="font-size: 12px;">octopress</a> <a href="/tags/web/" style="font-size: 18px;">web</a> <a href="/tags/主题/" style="font-size: 14px;">主题</a> <a href="/tags/产品/" style="font-size: 12px;">产品</a> <a href="/tags/前端/" style="font-size: 14px;">前端</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/旧事/" style="font-size: 20px;">旧事</a> <a href="/tags/杂谈/" style="font-size: 12px;">杂谈</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/浏览器/" style="font-size: 12px;">浏览器</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/生活/" style="font-size: 16px;">生活</a> <a href="/tags/经验/" style="font-size: 10px;">经验</a> <a href="/tags/药别停/" style="font-size: 12px;">药别停</a> <a href="/tags/设计/" style="font-size: 12px;">设计</a> <a href="/tags/黑科技/" style="font-size: 10px;">黑科技</a>
+    			</div>
+    	</section>
+    
+
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">Litten，&lt;br&gt;毕业于华科，就职于鹅厂&lt;br&gt;&lt;br&gt;热爱大海与冷笑话，&lt;br/&gt;目前是一枚前端&lt;br/&gt;&lt;br/&gt;胆小认生，不易相处，&lt;br&gt;年轻无为，卖马为生。</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
