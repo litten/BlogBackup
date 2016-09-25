@@ -408,14 +408,14 @@
   </url>
   
   <url>
-    <loc>http://litten.github.io/assets/demo/my_news_reader/index.html</loc>
+    <loc>http://litten.github.io/assets/demo/my_news_reader/js/main.js</loc>
     
     <lastmod>2014-10-12T03:15:19.807Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://litten.github.io/assets/demo/my_news_reader/js/main.js</loc>
+    <loc>http://litten.github.io/assets/demo/my_news_reader/index.html</loc>
     
     <lastmod>2014-10-12T03:15:19.807Z</lastmod>
     
@@ -450,14 +450,14 @@
   </url>
   
   <url>
-    <loc>http://litten.github.io/assets/demo/hack_demo.html</loc>
+    <loc>http://litten.github.io/assets/demo/jiugongge_demo.html</loc>
     
     <lastmod>2014-10-12T03:15:19.805Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://litten.github.io/assets/demo/jiugongge_demo.html</loc>
+    <loc>http://litten.github.io/assets/demo/hack_demo.html</loc>
     
     <lastmod>2014-10-12T03:15:19.805Z</lastmod>
     
@@ -492,6 +492,13 @@
   </url>
   
   <url>
+    <loc>http://litten.github.io/assets/demo/gift/css/reset.css</loc>
+    
+    <lastmod>2014-10-12T03:15:19.793Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://litten.github.io/assets/demo/gift/css/index.css</loc>
     
     <lastmod>2014-10-12T03:15:19.793Z</lastmod>
@@ -499,9 +506,9 @@
   </url>
   
   <url>
-    <loc>http://litten.github.io/assets/demo/gift/css/reset.css</loc>
+    <loc>http://litten.github.io/assets/demo/coffee_pc_demo/pro-con.js</loc>
     
-    <lastmod>2014-10-12T03:15:19.793Z</lastmod>
+    <lastmod>2014-10-12T03:15:19.792Z</lastmod>
     
   </url>
   
@@ -514,13 +521,6 @@
   
   <url>
     <loc>http://litten.github.io/assets/demo/coffee_pc_demo/pro-con.html</loc>
-    
-    <lastmod>2014-10-12T03:15:19.792Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://litten.github.io/assets/demo/coffee_pc_demo/pro-con.js</loc>
     
     <lastmod>2014-10-12T03:15:19.792Z</lastmod>
     
