@@ -484,23 +484,6 @@
 
     
   <url>
-    <loc>http://litten.github.io/2015/04/28/img-lazy-load/</loc>
-    <lastmod>2016-09-12T16:52:39.505Z</lastmod>
-    <data>
-        <display>
-        <title>说到加载图片，我们可以谈些什么</title>
-        <pubTime>2015-04-28T15:54:00.000Z</pubTime>
-        
-        <tag>js</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://litten.github.io/2015/07/06/hack-in-localstorage/</loc>
     <lastmod>2016-09-12T16:52:39.505Z</lastmod>
     <data>
@@ -513,6 +496,23 @@
         <tag>安全</tag>
          
         <tag>黑科技</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://litten.github.io/2015/04/28/img-lazy-load/</loc>
+    <lastmod>2016-09-12T16:52:39.505Z</lastmod>
+    <data>
+        <display>
+        <title>说到加载图片，我们可以谈些什么</title>
+        <pubTime>2015-04-28T15:54:00.000Z</pubTime>
+        
+        <tag>js</tag>
          
          
            
