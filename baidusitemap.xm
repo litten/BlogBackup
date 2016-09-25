@@ -455,9 +455,9 @@
         <title>记“刺客信条”三部曲：水月镜像，无心去来</title>
         <pubTime>2012-12-18T15:23:00.000Z</pubTime>
         
-        <tag>游戏</tag>
-         
         <tag>旧事</tag>
+         
+        <tag>游戏</tag>
          
          
            
@@ -484,6 +484,23 @@
 
     
   <url>
+    <loc>http://litten.github.io/2015/04/28/img-lazy-load/</loc>
+    <lastmod>2016-09-12T16:52:39.505Z</lastmod>
+    <data>
+        <display>
+        <title>说到加载图片，我们可以谈些什么</title>
+        <pubTime>2015-04-28T15:54:00.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://litten.github.io/2015/07/06/hack-in-localstorage/</loc>
     <lastmod>2016-09-12T16:52:39.505Z</lastmod>
     <data>
@@ -496,23 +513,6 @@
         <tag>安全</tag>
          
         <tag>黑科技</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://litten.github.io/2015/04/28/img-lazy-load/</loc>
-    <lastmod>2016-09-12T16:52:39.505Z</lastmod>
-    <data>
-        <display>
-        <title>说到加载图片，我们可以谈些什么</title>
-        <pubTime>2015-04-28T15:54:00.000Z</pubTime>
-        
-        <tag>js</tag>
          
          
            

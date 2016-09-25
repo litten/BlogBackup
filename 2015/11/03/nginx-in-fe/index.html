@@ -354,7 +354,7 @@ Nginx，一名网红（网络服务器红人…），就算没有自传和回忆
     <script>
 	var yiliaConfig = {
 		fancybox: true,
-		mathjax: true,
+		mathjax: false,
 		animate: true,
 		isHome: false,
 		isPost: true,
@@ -367,27 +367,6 @@ Nginx，一名网红（网络服务器红人…），就算没有自传和回忆
 </script>
 
 <script src="/./main.js"></script>
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
     
