@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://litten.github.io/2016/09/11/diary-2016-0904-0910/</loc>
-    <lastmod>2016-09-28T16:37:41.894Z</lastmod>
+    <lastmod>2016-09-29T16:04:34.892Z</lastmod>
     <data>
         <display>
         <title>旧事 imweb-conf 9.4-9.10</title>
@@ -501,6 +501,23 @@
 
     
   <url>
+    <loc>http://litten.github.io/2015/04/28/img-lazy-load/</loc>
+    <lastmod>2016-09-12T16:52:39.505Z</lastmod>
+    <data>
+        <display>
+        <title>说到加载图片，我们可以谈些什么</title>
+        <pubTime>2015-04-28T15:54:00.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://litten.github.io/2015/07/06/hack-in-localstorage/</loc>
     <lastmod>2016-09-12T16:52:39.505Z</lastmod>
     <data>
@@ -513,23 +530,6 @@
         <tag>安全</tag>
          
         <tag>黑科技</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://litten.github.io/2015/04/28/img-lazy-load/</loc>
-    <lastmod>2016-09-12T16:52:39.505Z</lastmod>
-    <data>
-        <display>
-        <title>说到加载图片，我们可以谈些什么</title>
-        <pubTime>2015-04-28T15:54:00.000Z</pubTime>
-        
-        <tag>js</tag>
          
          
            
@@ -730,9 +730,9 @@
         <title>统一处理异步的js回调</title>
         <pubTime>2013-10-06T02:55:00.000Z</pubTime>
         
-        <tag>web</tag>
-         
         <tag>js</tag>
+         
+        <tag>web</tag>
          
          
            
@@ -918,9 +918,9 @@
         <title>Blog主题更新-1.0</title>
         <pubTime>2012-12-16T07:16:00.000Z</pubTime>
         
-        <tag>主题</tag>
-         
         <tag>octopress</tag>
+         
+        <tag>主题</tag>
          
          
            
@@ -956,9 +956,9 @@
         <title>web worker简易入门</title>
         <pubTime>2013-09-25T02:55:00.000Z</pubTime>
         
-        <tag>web</tag>
-         
         <tag>html5</tag>
+         
+        <tag>web</tag>
          
          
            
