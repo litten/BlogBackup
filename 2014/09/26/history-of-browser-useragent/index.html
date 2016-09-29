@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>浏览器野史 UserAgent列传（上） | Litten的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="某天，我做一个小项目，需要判断一下浏览器类型。简单的呀。控制台敲下：navigator.userAgent浏览器回应：Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
+天，这串是啥？你怎么连话都说不清楚？
+我对userAg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器野史 UserAgent列传（上）">
+<meta property="og:url" content="http://litten.github.io/2014/09/26/history-of-browser-useragent/index.html">
+<meta property="og:site_name" content="Litten的博客">
+<meta property="og:description" content="某天，我做一个小项目，需要判断一下浏览器类型。简单的呀。控制台敲下：navigator.userAgent浏览器回应：Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
+天，这串是啥？你怎么连话都说不清楚？
+我对userAg">
+<meta property="og:image" content="http://litten.github.io/assets/blogImg/browser-history.jpg">
+<meta property="og:updated_time" content="2016-09-12T16:40:30.053Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浏览器野史 UserAgent列传（上）">
+<meta name="twitter:description" content="某天，我做一个小项目，需要判断一下浏览器类型。简单的呀。控制台敲下：navigator.userAgent浏览器回应：Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
+天，这串是啥？你怎么连话都说不清楚？
+我对userAg">
+<meta name="twitter:image" content="http://litten.github.io/assets/blogImg/browser-history.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Litten的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/assets/blogImg/litten.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Litten</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">胆小认生，不易相处</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/instagram">相册</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/litten" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/litten225" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Litten</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/assets/blogImg/litten.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Litten</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">胆小认生，不易相处</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/litten" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/litten225" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-history-of-browser-useragent" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      浏览器野史 UserAgent列传（上）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/assets/blogImg/browser-history.jpg" alt="其实应该叫做浏览器约架史">   </p>
+<p>某天，我做一个小项目，需要判断一下浏览器类型。简单的呀。<br>控制台敲下：<code>navigator.userAgent</code><br>浏览器回应：<code>Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36</code></p>
+<p>天，这串是啥？你怎么连话都说不清楚？</p>
+<p>我对userAgent并不陌生，但明明一个单词就可以说清楚的事情，却是这么掏心掏肺的回答。怪可怜的，一定有冤情。</p>
+<p>后来我查阅了很多资料，发现历史非常的精彩。</p>
+<a id="more"></a>
+<p>###大事年表</p>
+<ul>
+<li>1990年: Nexus(WorldWideWeb)诞生</li>
+<li>1993年1月23日：Mosaic诞生</li>
+<li>1994年12月：Netscape(Mozilla)诞生</li>
+<li>1995年4月：Opera诞生</li>
+<li>1995年8月16日：Internet Explorer诞生</li>
+<li>2002年9月23日：Firefox诞生</li>
+<li>2003年1月7日：Safari诞生</li>
+<li>2008年9月2日：Chrome诞生</li>
+</ul>
+<p>###一、盘古开天地<br>很久很久之前，上古大神Berners-Lee发明了WorldWideWeb，即万维网。同时，李大神也发明了第一款浏览器。真是具有跨时代意义的工具呀，好伟大呀，人们在想，叫什么好呢？<br>但大神就是大神，大神内心的想法又岂是尔等凡人能够肆意揣摩？</p>
+<p>万万没想到，李大神说，我这浏览器，也叫WorldWideWeb！不行么？<br>行行行。</p>
+<p>虽然李大神起名字这么拽，但他后来发觉，还是得赋予一点承上启下的历史意义，就改名成“Nexus”。值得注意的是，这浏览器，居然是可以兼容Unix跟Microsoft DOS的。它在当时流行的各种电脑上跑得飞起，应用也越来越广，被称为“杀手级应用”。杀手级…你们看互联网一开始就是这么的腥风血雨。</p>
+<p>但这个浏览器，还不支持图片的显示，这是出现UserAgent的导火索。</p>
+<p>###二、唐尧虞舜<br>93年，伊利诺大学的NCSA组织认为，浏览器无图无真相，这不好。因而他们发明了第一款可显示图片的浏览器。<br>真是具有跨时代意义的工具呀，好伟大呀，人们在想，叫什么好呢？<br>但大神就是大神，大神就是连起名字都让你惊心动魄。</p>
+<p>NCSA组织说，它能显示图片，偏偏我们就要叫它“马赛克(Mosaic)”！不行么？<br>行行行。  </p>
+<p>但有人就问了，Nexus不显示图片，Mosaic能显示，你们让html提供者怎么写代码？你们是不是想逼死选择困难症患者？有没有考虑过天秤座的感受？</p>
+<p>因而UserAgent就诞生了。Mosaic将自己标志为<code>NCSA_Mosaic/2.0 (Windows 3.1)</code>，大家该怎么写代码就怎么写，但请求会带上这个信息，服务器就知道该不该返回能显示图片的html。UserAgent君，出生时跟我们设想的一样简单，仅仅标明了自己是什么浏览器，在什么系统运行，以及各自的版本号。</p>
+<p>新旧浏览器们像彬彬有礼的君王，商议和让位是为了更好的繁荣。但风雨欲来。</p>
+<p>###三、楚汉争霸<br>像刘邦一样，走出来一个搅局的小流氓。当然他还是很有志向的，他的目标，就是战胜霸主Mosaic。后来，他还真的做到了。<br>如今，所有现代浏览器的UserAgent里都有它的标志，就像汉朝之后，我们都称为“汉”人。一群很有天赋的程序员，一起缔造了它的辉煌。</p>
+<p>真是具有跨时代意义的工具呀，好伟大呀，人们在想，它叫什么呢？<br>但大神就是大神，大神就是让你永远也猜不到他们想了个什么名字。<br>大神们说，叫Mozilla，不行么？<br>行。但什么意思呢？</p>
+<p>含义有二。其一，哥斯拉(Godzilla)谐音，诚然是一头野心勃勃的怪兽；其二，”Mosaic Killa”之意，Killa是俚语中Killer的拼法，即“马赛克的终结者”，赤裸裸的挑战。  </p>
+<p>惊呆了的Mosaic小心翼翼的念着Mozilla这发音：“Mo…摸咋了？”勃然大怒，“摸你妹！”</p>
+<p>鉴于Mosaic当时的权势，Mozilla改名成Netscape Navigator(网景航海家)。小怪兽突然变成有点文艺小清新的名字，郁闷得很，但内心的血液沸腾着。虽然叫大名叫网景，但它把UserAgent偷偷设置成<code>Mozilla/1.0 (Win3.1)</code>。还是摸咋了？咬我？</p>
+<p>###四、宋元之战<br>很快，NetScape战胜了Mosaic，成为了新的霸主，因为其更优的展示。<br>NetScape最先支持了html框架显示，就是简单的table布局，内外边距之类，仅仅这点就将Mosaic抛诸身后。区别这两个浏览器，还是用的UserAgent。如果是UserAgent里含有“Mozilla”字样，那就发送支持框架的页面，否则，就发送不含框架的页面。  </p>
+<p>NetScape帝国日益庞大，歌舞升平，一切风平浪静，直到微软的铁骑挥军南下。</p>
+<p>微软发布了一款跟系统强绑定的浏览器，真是具有跨时代意义的工具呀，好伟大呀，人们在想，它叫什么呢？<br>不用想了，就是IE。这命名也相当简单粗暴，Internet Explorer，直接把这工具的用途拍在你脸上。连说明书都可以免了。</p>
+<p>IE也是支持html标准框架的，但由于前面的历史原因，人们只会给UserAgent里含有“Mozilla”字样的浏览器发送含框架的页面。但这点小事能难倒我大微软？IE呵呵一笑，把自己的UserAgent改成<code>Mozilla/1.22 (compatible; MSIE 2.0; Windows 95)</code>。看，我这里也有“Mozilla”字样，也能收到含框架的页面了！</p>
+<p>当然，这个小流氓行为，跟后来把IE和Windows捆绑一起销售的大流氓行为比起来，根本不为足道。后面的故事我们也知道了，IE把NetScape干掉了。但它的身体上，却永远的烙上了“Mozilla”的印记。</p>
+<p>###五、康乾盛世</p>
+<p>看过奥特曼的都知道，怪兽被打败了会再回来。别忘了NetScape曾拥有一批大神们，失败后，他们围绕着浏览器排版引擎Gecko(壁虎)成立了非正式组织Mozilla。小怪兽再次出发。大神们发明了另一款优秀的浏览器，它在插件拓展和开发调试领域做出的贡献，绝对可以载入互联网历史。</p>
+<p>真是具有跨时代意义的工具呀，好伟大呀，人们在想，它叫什么呢？<br>但大神就是大神，大神就是即使你知道了Mozilla的命名都是野兽，却还是猜不到是什么。<br>Mozilla说，我们浴火重生，叫Phoenix(凤凰)！不行么？<br>真不行。</p>
+<p>刚推出就被人告了，原来已经有一家公司叫做“凤凰科技”。<br>Mozilla瀑布汗，改名叫Firebird(火鸟)！还不行么？<br>我们得原谅一下他们的取名，虽然现在看来满满的山寨感，可放在那个时代，Firebird这名字很炫酷。就像你当初的QQ昵称叫赤炎天使感觉依然良好一样。</p>
+<p>但是，他们发现，业内有个数据库系统，也叫的Firebird…泪流满面的Mozilla感慨重生好难呀。最后才决定叫Firefox(火狐)。     </p>
+<p>基于Gecko引擎的Firefox非常优秀，为了告诉大家，我使用了这个引擎，它标志自己的UserAgent为<code>Mozilla/5.0 (Windows; U; Windows NT 5.1; sv-SE; rv:1.7.5) Gecko/20041108 Firefox/1.0</code>。<br>这时候的UserAgent，虽然长了点，但它并不混乱，准确的标明了系统，排版引擎，浏览器名称等信息。虽然IE这时已经占有了很大的市场份额，但基本停步不前；而Mozilla经过一段时间的修生养息，Firefox在业内广受好评，得到了快速的发展。</p>
+<p>时值2003年，web2.0的浪潮前夕，浏览器的发展达到了空前的盛世。<br>然而所谓否极泰来，盛极则衰。涅槃的Firefox迎来盛世，却又恰恰由于盛世，决定了UserAgent纠结的命运。</p>
+<hr>
+<p><a href="/2014/10/05/history-of-browser-useragent2/">《浏览器野史 UserAgent列传（下）》</a></p>
+<p>To Be Continue.<br>litten 2014.9.28</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2014/09/26/history-of-browser-useragent/" class="archive-article-date">
+  	<time datetime="2014-09-26T03:26:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-09-26</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/浏览器/">浏览器</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2014/10/05/history-of-browser-useragent2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          浏览器野史 UserAgent列传（下）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/26/journey-to-yunnan/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">还是丽江有意思</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="history-of-browser-useragent" data-title="浏览器野史 UserAgent列传（上）" data-url="http://litten.github.io/2014/09/26/history-of-browser-useragent/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"litten-hexo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Litten
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/"
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/coffeescript/" style="font-size: 12px;">coffeescript</a> <a href="/tags/css/" style="font-size: 14px;">css</a> <a href="/tags/css3/" style="font-size: 12px;">css3</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/html5/" style="font-size: 16px;">html5</a> <a href="/tags/js/" style="font-size: 18px;">js</a> <a href="/tags/octopress/" style="font-size: 12px;">octopress</a> <a href="/tags/web/" style="font-size: 18px;">web</a> <a href="/tags/主题/" style="font-size: 14px;">主题</a> <a href="/tags/产品/" style="font-size: 12px;">产品</a> <a href="/tags/前端/" style="font-size: 14px;">前端</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/旅行/" style="font-size: 12px;">旅行</a> <a href="/tags/旧事/" style="font-size: 20px;">旧事</a> <a href="/tags/杂谈/" style="font-size: 12px;">杂谈</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/浏览器/" style="font-size: 12px;">浏览器</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/生活/" style="font-size: 16px;">生活</a> <a href="/tags/经验/" style="font-size: 10px;">经验</a> <a href="/tags/药别停/" style="font-size: 12px;">药别停</a> <a href="/tags/设计/" style="font-size: 12px;">设计</a> <a href="/tags/黑科技/" style="font-size: 10px;">黑科技</a>
+    			</div>
+    	</section>
+    
+
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">Litten，&lt;br&gt;毕业于华科，就职于鹅厂&lt;br&gt;&lt;br&gt;热爱大海与冷笑话，&lt;br/&gt;目前是一枚前端&lt;br/&gt;&lt;br/&gt;胆小认生，不易相处，&lt;br&gt;年轻无为，卖马为生。</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
