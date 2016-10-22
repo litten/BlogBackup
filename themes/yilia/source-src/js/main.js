@@ -1,3 +1,5 @@
+require('../css/main.scss')
+
 require('./jquery')
 
 var tags = require('./tags')
@@ -7,7 +9,7 @@ var browser = require('./browser')
 var fixPage = require('./fix-page')
 var mobile = require('./mobile')
 var viewer = require('./viewer')
-var ins = require('./ins')
+require('./jquery.lazyload')
 
 $(function() {
 	viewer.init()
@@ -28,7 +30,7 @@ $(function() {
 		})
 	}
 
-	if (window.location.pathname === '/instagram/') {
-		ins.init()
+	if (yiliaConfig && yiliaConfig.open_in_new) {
+		$('.article-entry a').not('.article-more-a').attr('target', '_blank')
 	}
 })

@@ -1,8 +1,17 @@
+html, body, #container {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.body-wrap {
+    margin-bottom: 0;
+}
 .left-col {
     display: none;
 }
 .mid-col {
     left: 0;
+    position: relative;
 }
 #header{
     .header-nav{
@@ -183,8 +192,8 @@
 }
 
 .instagram .open-ins{
-    right: 0;
-    top: -52px;
+    left: 2px;
+    top: -30px;
     color: #aaa;
 }
 .info-on-right{
@@ -222,6 +231,8 @@
 }
 
 #footer {
+    position: relative;
+    bottom: 0;
     .footer-left{
         float: initial;
         margin-bottom: 10px;

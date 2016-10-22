@@ -2,7 +2,7 @@
 
 menu:
   主页: /
-  相册: /instagram
+  相册: /photos
 
 # SubNav
 subnav:
@@ -32,11 +32,11 @@ mathjax: false
 animate: true
 
 # 是否在新窗口打开链接
-open_in_new: false
+open_in_new: true
 
 # Miscellaneous
 google_analytics: ''
-favicon: /favicon.png
+favicon: /assets/img/favicon.ico
 
 #你的头像url
 avatar: /assets/blogImg/litten.png
