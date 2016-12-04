@@ -58,6 +58,8 @@
   margin: 30px;
   position: relative;
   border: 1px solid #ddd;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   background: #fff;
   transition: all 0.2s ease-in;
 /*   &.show{
@@ -114,11 +116,12 @@
 .article-more-link{
   margin-top: 0;
   text-align: left;
+  float: right;
   a{
     background: #4d4d4d;
     color: #fff;
     font-size: 12px;
-    padding: 2px 8px 4px;
+    padding: 5px 8px 5px;
     line-height: 16px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;

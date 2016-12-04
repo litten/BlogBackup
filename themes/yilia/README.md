@@ -10,13 +10,26 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
 
 —————————————————————
 
-关于主题：
+**关于主题：**
 
-1. 我喜欢简约。所以近期文章，搜索框都拿掉了    
-2. 接地气一点。所以用上了jiathis分享，友言评论      
-3. 追求移动端的体验
-3. 让大家把注意力放到内容上。这是本主题设计初衷      
-4. 主题不支持IE6，7，8。以后也不会     
+1. 崇尚简约       
+2. 追求移动端体验     
+3. 希望把加载速度做到极致（努力中）    
+4. 让大家把注意力放到内容上。这是本主题设计初衷      
+5. 主题不支持IE6，7，8。以后也不会     
+
+**近期更新（2016.12.04）：**
+
+1. 打赏
+2. 搜索
+3. “更好的”标签云
+4. “更好的”分享
+5. 一些动画
+
+**计划中：**
+
+1. TOC
+2. 移动端优化
              
 ## 一、外观
 
@@ -76,7 +89,7 @@ subnav:
   rss: "#"
   zhihu: "#"
   #douban: "#"
-  #mail: "#"
+  #mail: "mailto:litten225@qq.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
@@ -90,15 +103,29 @@ rss: /atom.xml
 root: 
 
 # Content
-excerpt_link: more
-fancybox: true
-mathjax: false
 
+# 文章太长，截断按钮文字
+excerpt_link: more
+# 文章卡片右下角常驻链接，不需要请设置为false
+show_all_link: '展开全文'
+# 数学公式
+mathjax: false
 # 是否开启动画效果
 animate: true
-
 # 是否在新窗口打开链接
 open_in_new: false
+
+# 打赏
+# 请在需要打赏的文章的md文件头部，设置属性reward: true
+
+# 打赏基础设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
+reward_type: 2
+# 打赏wording
+reward_wording: '谢谢你请我吃糖果'
+# 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
+alipay: 
+# 微信二维码图片地址
+weixin: 
 
 # Miscellaneous
 google_analytics: ''
@@ -109,20 +136,18 @@ avatar:
 
 #是否开启分享
 share_jia: true
-share_addthis: false
 
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
 #若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
 duoshuo: false
 
-# 如不需要，将该项置为false
+# 智能菜单
+# 如不需要，将该对应项置为false
 # 比如
 #smart_menu:
 #  friends: false
-
 smart_menu:
   innerArchive: '所有文章'
-  tagcloud: '标签'
   friends: '友链'
   aboutme: '关于我'
 

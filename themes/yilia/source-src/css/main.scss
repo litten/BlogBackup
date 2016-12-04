@@ -8,14 +8,15 @@
 @import "./tags-cloud";
 @import "./social";
 @import "./page";
-@import "./archive-inner";
 @import "./archive";
 @import "./tools";
-@import "./switch";
 @import "./article-main";
 @import "./article-inner";
 @import "./article-nav";
 @import "./duoshuo";
+@import "./share";
+@import "./reward";
+@import "./tooltip";
 @import "./footer";
 @media screen and (max-width: 800px) {
   @import "./mobile";

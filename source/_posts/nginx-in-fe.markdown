@@ -3,6 +3,7 @@ layout: post
 title: "Nginx能为前端开发带来什么？"
 date: 2015-11-03 21:30
 comments: true
+reward: true
 tags: 
 	- 前端
 ---
@@ -146,7 +147,7 @@ location ~ /cgi-bin/* {
 ```
 后续的事情，可以在本地创建一个cgi-bin文件夹，在里面放置需要映射的文本，并开启服务到8080端口即可。 
 
-##场景五：移动侧调试
+### 场景五：移动侧调试
 
 `Fiddler` 有一个勾选项 `Allow remote computers to connect`，并可以指定 `listen port` 可以使得手机/其它终端通过将本机设为代理而访问本机环境，与 `hosts` 配合会很实用。
 

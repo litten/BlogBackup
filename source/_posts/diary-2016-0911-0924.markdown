@@ -9,7 +9,7 @@ tags:
 
 ![](/assets/blogImg/diary-9.jpg)
 
-> *市面上的web相册都不好用，干脆自己做了个[相册](http://litten.me/gallery)，github开源，取名为[Zing](https://github.com/litten/zing-gallery)，待填坑…*
+> *市面上的web相册都不好用，干脆自己做了个[相册](http://litten.me/gallery/%E7%8E%A9%C2%B7%E5%87%AF%E9%87%8C?password=guest)，github开源，取名为[Zing](https://github.com/litten/zing-gallery)，待填坑…*
 
 ------------------
 

@@ -90,17 +90,17 @@ exclude_generator:
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
-#deploy:
-#  type: git
-#  repository: git@github.com:litten/litten.github.com.git
-#  branch: master
-
 deploy:
-  type: rsync
-  host: 120.24.181.238
-  user: root
-  root: /usr/local/nginx/litten.me/
-  port: 22
+  type: git
+  repository: git@github.com:litten/litten.github.com.git
+  branch: master
+
+#deploy:
+#  type: rsync
+#  host: 120.24.181.238
+#  user: root
+#  root: /usr/local/nginx/litten.me/
+#  port: 22
 
 sitemap:
     path: sitemap.xml
@@ -111,3 +111,22 @@ feed:
     type: atom
     path: atom.xml
     limit: 100
+
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: true
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true
