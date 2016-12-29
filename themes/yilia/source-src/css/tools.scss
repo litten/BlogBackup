@@ -7,6 +7,8 @@
     z-index: 998;
     padding: 0;
     opacity: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
     @extend %trans;
     &.show {
         opacity: 1;
@@ -14,6 +16,9 @@
     }
     &.hide {
         @extend %anmSmallLeftOut;
+    }
+    .tools-nav {
+        display: none;
     }
     .tools-wrap, .tools-section{
         height: 100%;
@@ -137,6 +142,9 @@
         .search-ul {
             margin-top: 10px;
             color: rgba(77, 77, 77, 0.75);
+            -webkit-overflow-scrolling: touch;
+            overflow-scrolling: touch;
+            overflow-y: auto;
             .search-li {
                 padding: 10px 20px;
                 border-bottom: 1px dotted #dcdcdc;

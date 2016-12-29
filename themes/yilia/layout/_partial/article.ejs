@@ -9,7 +9,9 @@
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
-        <a class="article-more-a" <% if (!theme.excerpt_link){ %>class="hidden"<% } %> href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
+        <% if (theme.excerpt_link) { %>
+          <a class="article-more-a" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
+        <% } %>
       <% } else { %>
         <%- post.content %>
       <% } %>
@@ -58,7 +60,7 @@
       <%- partial('post/category') %>
       <% if (index && theme.show_all_link){ %>
         <p class="article-more-link">
-          <a class="article-more-a" href="<%- url_for(post.path) %>#more"><%= theme.show_all_link %> >></a>
+          <a class="article-more-a" href="<%- url_for(post.path) %>"><%= theme.show_all_link %> >></a>
         </p>
       <% } %>
 

@@ -1,13 +1,30 @@
 // 动画
 import Anm from './anm'
+// 浏览器判断
+import Browser from './browser'
 // Q 基础库
 import Q from './Q'
+// 神特么safari不支持fetch
+import * as promise from 'es6-promise'
+import * as fetch from 'fetch-ie8'
 
-let localKey = 'yilia-tag'
+window.Promise = window.Promise || promise.Promise
+window.fetch = window.fetch || fetch
+
+let localTagKey = 'yilia-tag'
+let localSearchKey = 'yilia-search'
+const isMobile = (Browser.versions.mobile && window.screen.width < 800)
 
 function fixzero(str) {
 	str = str + ''
 	return str.length === 1 ? '0' + str : str
+}
+
+function setScrollZero() {
+	let $sct = document.querySelectorAll('.tools-section')
+	$sct.forEach((em) => {
+		em.scrollTop = 0
+	})
 }
 
 function init() {
@@ -36,10 +53,13 @@ function init() {
 	    	},
 	    	toggleTag: (e) => {
 	    		app.$set('showTags', !app.showTags)
-	    		window.localStorage && window.localStorage.setItem(localKey, app.showTags)
+	    		window.localStorage && window.localStorage.setItem(localTagKey, app.showTags)
 	    	},
 	        openSlider: (e, type) => {
-				e.stopPropagation()
+	        	e.stopPropagation()
+	        	if (!type) {
+	        		type = 'innerArchive'
+	        	}
 				// innerArchive: '所有文章'
   				// friends: '友情链接'
   				// aboutme: '关于我'
@@ -49,6 +69,7 @@ function init() {
   				app.$set(type, true)
   				app.$set('isShow', true)
   				app.$set('isCtnShow', true)
+  				setScrollZero()
 			}
 	    },
 	    filters: {
@@ -76,36 +97,42 @@ function init() {
 	    }
 	})
 
-	app.$watch('search', function(val, oldVal){
-    	let type = 'title'
-    	if (val.indexOf('#') === 0) {
-    		val = val.substr(1, val.length)
-    		type = 'tag'
-    	}
-    	let items = app.items
-      	items.forEach((item) => {
-      		let matchTitle = false
-      		if (item.title.indexOf(val) > -1) {
-      			matchTitle = true
-      		}
+	function handleSearch(val) {
+		val = val || ''
+		let type = 'title'
+		if (val.indexOf('#') === 0) {
+			val = val.substr(1, val.length)
+			type = 'tag'
+		}
+		let items = app.items
+	  	items.forEach((item) => {
+	  		let matchTitle = false
+	  		if (item.title.indexOf(val) > -1) {
+	  			matchTitle = true
+	  		}
 
-      		let matchTags = false
-      		item.tags.forEach((tag) => {
-      			if (tag.name.indexOf(val) > -1) {
+	  		let matchTags = false
+	  		item.tags.forEach((tag) => {
+	  			if (tag.name.indexOf(val) > -1) {
 	      			matchTags = true
 	      		}
-      		})
+	  		})
 
-      		if ((type === 'title' && matchTitle) || (type === 'tag' && matchTags)) {
-      			item.isShow = true
-      		} else {
-      			item.isShow = false
-      		}
-      	})
-      	app.$set('items', items)
+	  		if ((type === 'title' && matchTitle) || (type === 'tag' && matchTags)) {
+	  			item.isShow = true
+	  		} else {
+	  			item.isShow = false
+	  		}
+	  	})
+	  	app.$set('items', items)
+	}
+
+	app.$watch('search', function(val, oldVal){
+		window.localStorage && window.localStorage.setItem(localSearchKey, val)
+		handleSearch(val)
     })
 
-	fetch('/content.json?t=' + (+ new Date()), {
+	window.fetch('/content.json?t=' + (+ new Date()), {
 		method: 'get',
 	}).then((res) => {
 		return res.json()
@@ -114,6 +141,10 @@ function init() {
 			em.isShow = true
 		})
 		app.$set('items', data)
+		// 搜索
+		let searchWording = (window.localStorage && window.localStorage.getItem(localSearchKey)) || ''
+		app.$set('search', searchWording)
+		searchWording !== '' && handleSearch(searchWording)
 	}).catch((err) => {
 		app.$set('jsonFail', true)
 	});
@@ -129,13 +160,14 @@ function init() {
 	}
 
 	// tag 显示/隐藏
-	var isTagOn = (window.localStorage && window.localStorage.getItem(localKey)) || 'false'
+	let isTagOn = (window.localStorage && window.localStorage.getItem(localTagKey)) || 'false'
 	app.$set('showTags', JSON.parse(isTagOn))
 
 	// 其他标签点击
 	// 标签
-	var $tags = document.querySelectorAll('.tagcloud a')
-	$tags.forEach(($em) => {
+	let $tags = document.querySelectorAll('.tagcloud a')
+	for (var i = 0, len = $tags.length; i < len; i++) {
+		let $em = $tags[i]
 		$em.setAttribute('href', 'javascript:void(0)')
 		$em.onclick = (e) => {
 			e.stopPropagation()
@@ -145,11 +177,15 @@ function init() {
 			app.$set('isShow', true)
 			app.$set('isCtnShow', true)
 			app.$set('search', '#' + $em.innerHTML)
+			setScrollZero()
+			return false
 		}
-	})
+	}
 }
 
 init()
-Anm.init()
+if (!isMobile) {
+	Anm.init()
+}
 
 module.exports = {}

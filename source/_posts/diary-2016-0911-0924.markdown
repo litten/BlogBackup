@@ -5,6 +5,7 @@ date: 2016-09-25 10:36
 comments: true
 tags: 
 	- 旧事
+	- 旅行
 ---
 
 ![](/assets/blogImg/diary-9.jpg)
