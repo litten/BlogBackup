@@ -98,7 +98,7 @@ function init() {
 	})
 
 	function handleSearch(val) {
-		val = val || ''
+		val = (val || '').toLowerCase()
 		let type = 'title'
 		if (val.indexOf('#') === 0) {
 			val = val.substr(1, val.length)
@@ -107,13 +107,13 @@ function init() {
 		let items = app.items
 	  	items.forEach((item) => {
 	  		let matchTitle = false
-	  		if (item.title.indexOf(val) > -1) {
+	  		if (item.title.toLowerCase().indexOf(val) > -1) {
 	  			matchTitle = true
 	  		}
 
 	  		let matchTags = false
 	  		item.tags.forEach((tag) => {
-	  			if (tag.name.indexOf(val) > -1) {
+	  			if (tag.name.toLowerCase().indexOf(val) > -1) {
 	      			matchTags = true
 	      		}
 	  		})
@@ -132,7 +132,7 @@ function init() {
 		handleSearch(val)
     })
 
-	window.fetch('/content.json?t=' + (+ new Date()), {
+	window.fetch(window.yiliaConfig.root + 'content.json?t=' + (+ new Date()), {
 		method: 'get',
 	}).then((res) => {
 		return res.json()
@@ -174,7 +174,7 @@ function init() {
 
 	// 其他标签点击
 	// 标签
-	let $tags = document.querySelectorAll('.tagcloud a')
+	let $tags = document.querySelectorAll('.tagcloud a.js-tag')
 	for (var i = 0, len = $tags.length; i < len; i++) {
 		let $em = $tags[i]
 		$em.setAttribute('href', 'javascript:void(0)')

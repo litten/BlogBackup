@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "【梦中的小偷】【织梦人的表白】"
+title: "失眠故事二【梦中的小偷】【织梦人的表白】"
 date: 2013-09-10 10:55
 comments: true
 tags: 
-	- 旧事
+	- 故事
 brief: "两个爱情故事，谁看？"
 ---
 

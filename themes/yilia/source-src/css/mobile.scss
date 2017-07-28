@@ -21,6 +21,13 @@ html, body, #container {
         position: relative;
     }
 }
+.wrap-side-operation {
+    display: none;
+}
+.cloud-tie-wrapper {
+	padding: 0;
+	min-height: 20px;
+}
 .tools-col {
     left: -300px;
     width: 300px;
@@ -68,7 +75,7 @@ html, body, #container {
     width: 50px;
     height: 50px;
     top: -5px;
-    z-index: 3;
+    z-index: 4;
     .slider-trigger{
         position: absolute;
         z-index: 101;
@@ -125,6 +132,15 @@ html, body, #container {
 }
 #viewer-box .viewer-box-l{
     font-size: 14px;
+}
+.article-nav-link-wrap{
+    margin: 5px 0;
+    display: block;
+    clear: both;
+    .icon-circle-right {
+        float: left;
+        margin: 6px 4px 0 0;
+    }
 }
 .article{
     padding: 10px;
@@ -200,13 +216,7 @@ html, body, #container {
             }
         }
     }
-    .article-nav-link-wrap{
-        margin: 5px 0;
-        strong{
-            float: left;
-            margin-right: 5px;
-        }
-    }
+    
     #article-nav-older{
         float: none;
         display: block;
@@ -221,7 +231,10 @@ html, body, #container {
 #disqus_thread {
     padding: 0 13px;
 }
-
+#article-nav {
+    margin: 0;
+    padding: 5px 10px 10px;
+}
 #article-nav #article-nav-older {
     float: none;
 }
@@ -295,7 +308,7 @@ html, body, #container {
 		height: 110px;
 		position: absolute;
 		width: 100%;
-        z-index: 1;
+        z-index: 2;
 		background: #4d4d4d;
 	}
 	#header{

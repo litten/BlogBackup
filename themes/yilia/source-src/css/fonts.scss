@@ -1,9 +1,9 @@
 @font-face {font-family: "iconfont";
-  src: url('./fonts/iconfont.eot?t=1479831143478'); /* IE9*/
-  src: url('./fonts/iconfont.eot?t=1479831143478#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('./fonts/iconfont.woff?t=1479831143478') format('woff'), /* chrome, firefox */
-  url('./fonts/iconfont.ttf?t=1479831143478') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('./fonts/iconfont.svg?t=1479831143478#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('./fonts/iconfont.eot'); /* IE9*/
+  src: url('./fonts/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./fonts/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('./fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('./fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -52,6 +52,8 @@
 
 .icon-weibo:before { content: "\e619"; }
 
+.icon-segmentfault:before { content: "\e603"; }
+
 .icon-sort:before { content: "\e700"; }
 
 .icon-jianshu:before { content: "\e613"; }
@@ -61,6 +63,8 @@
 .icon-circle-right:before { content: "\e720"; }
 
 .icon-loading:before { content: "\e614"; }
+
+.icon-acfun:before { content: "\e604"; }
 
 .icon-close:before { content: "\e60c"; }
 
@@ -86,6 +90,8 @@
 
 .icon-qzone:before { content: "\e680"; }
 
+.icon-category:before { content: "\e605"; }
+
 .icon-douban:before { content: "\e64c"; }
 
 .icon-roundleftfill:before { content: "\e799"; }
@@ -97,3 +103,9 @@
 .icon-linkedin:before { content: "\e6d4"; }
 
 .icon-google:before { content: "\e635"; }
+
+.icon-plane:before { content: "\e62f"; }
+
+.icon-bilibili:before { content: "\e622"; }
+
+.icon-psn:before { content: "\e6c7"; }
